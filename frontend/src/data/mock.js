@@ -62,42 +62,42 @@ export const testimonials = [
     id: 1,
     name: "MARTIN JONES",
     title: "Businessman, Brazil",
-    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzh8MHwxfHNlYXJjaHwxfHxidXNpbmVzcyUyMHBvcnRyYWl0c3xlbnwwfHx8fDE3NjQ2NzkzNzJ8MA&ixlib=rb-4.1.0&q=85",
+    image: "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/locatation/0G4MpFhMscifkcXgKcOa/images/1087a762-02b6-4d25-bda0-2dbfa3b369f6.jpeg",
     quote: "I really enjoyed language coaching with Kate. She is really good at understanding aspects of international business and how things work on a daily basis - that was valuable to me"
   },
   {
     id: 2,
     name: "SHAWN PARKER",
     title: "Student, USA",
-    image: "https://images.unsplash.com/photo-1724128195190-19cb7082a511?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzh8MHwxfHNlYXJjaHwzfHxidXNpbmVzcyUyMHBvcnRyYWl0c3xlbnwwfHx8fDE3NjQ2NzkzNzJ8MA&ixlib=rb-4.1.0&q=85",
+    image: "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/locatation/0G4MpFhMscifkcXgKcOa/images/75fdbf27-b9be-4702-8948-ea4436a8b2a4.jpeg",
     quote: "Kate as a teacher is really awesome. She makes learning fun and helps me understand things that seem hard. She really cares about teaching."
   },
   {
     id: 3,
     name: "JESSICA SANDERS",
     title: "Parent, UK",
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop",
+    image: "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/locatation/0G4MpFhMscifkcXgKcOa/images/1fe23f84-8e9d-48e3-b719-ae4932280ebf.jpeg",
     quote: "Kate has been a wonderful teacher for my kid as they learn English. She is patient and kind, and my child feels more confident with her help. I really like the fact Kate is using kids personal interests to help them learn."
   },
   {
     id: 4,
     name: "FIONA WU",
     title: "Parent, Hong Kong",
-    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop",
+    image: "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/0G4MpFhMscifkcXgKcOa/media/658b4389d56b0dc6ef278b95.png",
     quote: "I'm truly grateful for this coaching service as it has not only enhanced Kevin's English proficiency but also sparked his enthusiasm for learning. I highly recommend this service to other parents looking to support their teenagers in mastering the English language."
   },
   {
     id: 5,
     name: "MIA CHEUNG",
     title: "Parent, Hong Kong",
-    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&h=400&fit=crop",
+    image: "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/0G4MpFhMscifkcXgKcOa/media/658b43c3e00b8749f31d5aab.png",
     quote: "Ocean found the sessions incredibly beneficial. Kate's expertise and practical insights really resonated with Ocean's learning style. These sessions have not only improved Ocean's language skills but also improved his real-world knowledge."
   },
   {
     id: 6,
     name: "SHARON CHENG",
     title: "Parent, Hong Kong",
-    image: "https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?w=400&h=400&fit=crop",
+    image: "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/0G4MpFhMscifkcXgKcOa/media/658b45e8096557cb19b0f0ff.png",
     quote: "Kate made lessons just right for Donna. It wasn't boring at all! I totally suggest this coaching for other kids like my Donna who want to get better at languages, but need a gentle push towards their learning."
   }
 ];
