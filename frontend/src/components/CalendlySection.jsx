@@ -22,7 +22,7 @@ const CalendlySection = () => {
       <div className="container mx-auto max-w-4xl">
         <div
           className="calendly-inline-widget"
-          data-url="https://calendly.com/kate-podbrezsky/45-minute-call?hide_event_type_details=1&hide_gdpr_banner=1&primary_color=4ade80"
+          data-url="https://calendly.com/katepodbrezsky/45-minute-call?hide_event_type_details=1&hide_gdpr_banner=1&primary_color=4ade80"
           style={{ minWidth: '320px', height: '700px' }}
         />
       </div>
