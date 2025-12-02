@@ -5,7 +5,7 @@ export const coachData = {
   title: "Language Coach",
   tagline: "professional neuro language coach",
   description: "I have a true passion for the power of effective communication. As an educator I will guide you on your unique journey to unwavering communication confidence.",
-  image: "https://images.unsplash.com/photo-1659353218140-7f8f9da943fc?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzF8MHwxfHNlYXJjaHwyfHxwcm9mZXNzaW9uYWwlMjBmZW1hbGUlMjBidXNpbmVzcyUyMGNvYWNofGVufDB8fHx8MTc2NDY3OTM2Mnww&ixlib=rb-4.1.0&q=85",
+  image: "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/0G4MpFhMscifkcXgKcOa/media/6748ef4d48436375b44b0f4e.png",
   aboutDescription: `My background encompasses diverse roles, including English coaching, translation, consecutive and simultaneous interpreting.
 
 I've honed my skills in proofreading and transcription across a spectrum of fields— education, local government, health, literature, business, and the environment.
