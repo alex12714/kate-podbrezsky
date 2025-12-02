@@ -2,15 +2,6 @@ import React from 'react';
 import { coachData } from '../data/mock';
 
 const AboutKate = () => {
-  const renderHighlightedText = (text) => {
-    const words = ['education', 'health', 'business', 'unique perspective'];
-    let result = text;
-    words.forEach(word => {
-      result = result.replace(new RegExp(`(${word})`, 'gi'), '<strong>$1</strong>');
-    });
-    return result;
-  };
-
   return (
     <section className="bg-white py-20 px-8">
       <div className="container mx-auto max-w-6xl">
@@ -19,7 +10,7 @@ const AboutKate = () => {
           <div className="lg:w-1/2">
             <div className="relative">
               <img
-                src={coachData.image}
+                src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/0G4MpFhMscifkcXgKcOa/media/6748eba7c4e51d926672cc95.png"
                 alt={coachData.name}
                 className="w-full max-w-md mx-auto rounded-lg shadow-xl object-cover"
               />
