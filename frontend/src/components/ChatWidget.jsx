@@ -29,7 +29,7 @@ const ChatWidget = () => {
           </button>
           <div className="flex items-start gap-3">
             <img
-              src="https://images.unsplash.com/photo-1659353218140-7f8f9da943fc?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzF8MHwxfHNlYXJjaHwyfHxwcm9mZXNzaW9uYWwlMjBmZW1hbGUlMjBidXNpbmVzcyUyMGNvYWNofGVufDB8fHx8MTc2NDY3OTM2Mnww&ixlib=rb-4.1.0&q=85"
+              src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/0G4MpFhMscifkcXgKcOa/media/6748ef4d48436375b44b0f4e.png"
               alt="Kate"
               className="w-10 h-10 rounded-full object-cover"
             />
