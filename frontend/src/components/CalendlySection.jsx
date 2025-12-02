@@ -20,11 +20,17 @@ const CalendlySection = () => {
   return (
     <section className="bg-white py-16 px-8">
       <div className="container mx-auto max-w-4xl">
+        {/* Calendly inline widget - Using the original embed from study-english.online */}
         <div
           className="calendly-inline-widget"
-          data-url="https://calendly.com/katepodbrezsky/45-minute-call?hide_event_type_details=1&hide_gdpr_banner=1&primary_color=4ade80"
+          data-url="https://calendly.com/kate-english-coach/45-minute-call?hide_gdpr_banner=1&primary_color=4ade80"
           style={{ minWidth: '320px', height: '700px' }}
         />
+        
+        {/* Fallback message */}
+        <div className="text-center mt-4 text-gray-500 text-sm">
+          <p>Can't see the calendar? <a href="https://calendly.com/kate-english-coach/45-minute-call" target="_blank" rel="noopener noreferrer" className="text-[#4ADE80] hover:underline">Click here to book directly</a></p>
+        </div>
       </div>
     </section>
   );
