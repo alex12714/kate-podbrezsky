@@ -32,17 +32,17 @@ const HeroSection = () => {
       </div>
 
       {/* Red decorative glow on left */}
-      <div className="absolute left-0 top-1/2 -translate-y-1/2 w-32 h-96 bg-red-900/30 blur-3xl rounded-full" />
+      <div className="absolute left-0 top-1/2 -translate-y-1/2 w-40 h-[600px] bg-gradient-to-r from-red-900/40 to-transparent blur-3xl" />
 
-      <div className="container mx-auto px-8 py-20 relative z-10">
-        <div className="flex flex-col lg:flex-row items-center justify-between min-h-[80vh]">
+      <div className="container mx-auto px-8 lg:px-16 relative z-10 pt-24 pb-32">
+        <div className="flex flex-col lg:flex-row items-center justify-between min-h-[75vh]">
           {/* Left Content */}
-          <div className="lg:w-1/2 text-left pt-16 lg:pt-0">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif text-white leading-tight mb-6">
+          <div className="lg:w-[55%] text-left">
+            <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] xl:text-6xl font-serif text-white leading-tight mb-6">
               {renderHighlightedText(heroContent.headline)}
             </h1>
             
-            <p className="text-gray-400 text-lg mb-12">
+            <p className="text-gray-400 text-lg mb-16">
               {heroContent.subheadline}
             </p>
 
@@ -52,15 +52,15 @@ const HeroSection = () => {
                 href={heroContent.whatsappLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-[#4ADE80] hover:bg-[#22c55e] text-gray-900 font-semibold px-8 py-4 rounded-full flex items-center gap-3 transition-all duration-300 hover:scale-105 shadow-lg shadow-green-500/30"
+                className="bg-[#4ADE80] hover:bg-[#22c55e] text-gray-900 font-semibold px-10 py-4 rounded-full flex items-center gap-3 transition-all duration-300 hover:scale-105 shadow-lg shadow-green-500/30"
               >
                 {heroContent.ctaButton}
-                <span className="bg-white/20 rounded-full p-1">
+                <span className="bg-white/30 rounded-full p-1.5">
                   <Phone className="w-5 h-5" />
                 </span>
               </a>
               
-              <span className="text-white font-medium">OR</span>
+              <span className="text-white font-medium text-sm">OR</span>
               
               <a
                 href={heroContent.registerLink}
@@ -75,15 +75,18 @@ const HeroSection = () => {
           </div>
 
           {/* Right Content - Coach Image */}
-          <div className="lg:w-1/2 relative mt-12 lg:mt-0 flex justify-end">
+          <div className="lg:w-[45%] relative mt-12 lg:mt-0 flex justify-center lg:justify-end">
             {/* Decorative bracket shape */}
-            <div className="absolute right-0 top-0 w-64 h-80 border-r-4 border-t-4 border-gray-600/50 rounded-tr-3xl" />
+            <div className="absolute right-4 top-0 w-56 h-72 border-r-[6px] border-t-[6px] border-[#3d5a73]/60 rounded-tr-[40px]" />
             
             <div className="relative z-10">
               <img
                 src={coachData.image}
                 alt={coachData.name}
-                className="w-80 h-auto object-cover object-top rounded-bl-[100px]"
+                className="w-72 lg:w-80 xl:w-96 h-auto object-cover object-top"
+                style={{ 
+                  clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 85%)',
+                }}
               />
             </div>
           </div>
@@ -93,14 +96,14 @@ const HeroSection = () => {
       {/* Diagonal White Section Divider */}
       <div className="absolute bottom-0 left-0 right-0">
         <svg
-          viewBox="0 0 1440 120"
+          viewBox="0 0 1440 100"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          className="w-full"
+          className="w-full h-20 lg:h-24"
           preserveAspectRatio="none"
         >
           <path
-            d="M0 120L1440 0V120H0Z"
+            d="M0 100L1440 0V100H0Z"
             fill="white"
           />
         </svg>
