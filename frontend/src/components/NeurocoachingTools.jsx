@@ -3,11 +3,14 @@ import { Heart, Brain, TrendingUp } from 'lucide-react';
 import { neurocoachingTools } from '../data/mock';
 
 const NeurocoachingTools = () => {
-  const icons = [
-    <Heart className="w-8 h-8" />,
-    <Brain className="w-8 h-8" />,
-    <TrendingUp className="w-8 h-8" />
-  ];
+  const getIcon = (index) => {
+    const icons = [
+      <Heart key="heart" className="w-8 h-8" />,
+      <Brain key="brain" className="w-8 h-8" />,
+      <TrendingUp key="trending" className="w-8 h-8" />
+    ];
+    return icons[index];
+  };
 
   return (
     <section className="bg-gray-50 py-20 px-8">
