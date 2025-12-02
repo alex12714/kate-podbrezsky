@@ -26,7 +26,7 @@ const FinalCTA = () => {
             {/* Image */}
             <div className="lg:w-1/2">
               <img
-                src="https://images.unsplash.com/photo-1659353218140-7f8f9da943fc?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzF8MHwxfHNlYXJjaHwyfHxwcm9mZXNzaW9uYWwlMjBmZW1hbGUlMjBidXNpbmVzcyUyMGNvYWNofGVufDB8fHx8MTc2NDY3OTM2Mnww&ixlib=rb-4.1.0&q=85"
+                src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/0G4MpFhMscifkcXgKcOa/media/6748d7a5ff7f7ebdc28b353b.png"
                 alt="Kate Podbrezsky"
                 className="w-full max-w-sm mx-auto rounded-lg shadow-xl object-cover"
               />
