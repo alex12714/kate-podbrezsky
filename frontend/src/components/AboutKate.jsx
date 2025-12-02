@@ -28,10 +28,10 @@ const AboutKate = () => {
                 My background encompasses diverse roles, including English coaching, translation, consecutive and simultaneous interpreting.
               </p>
               <p>
-                I've honed my skills in proofreading and transcription across a spectrum of fields— <strong>education</strong>, local government, <strong>health</strong>, literature, <strong>business</strong>, and the environment.
+                I&apos;ve honed my skills in proofreading and transcription across a spectrum of fields— <strong>education</strong>, local government, <strong>health</strong>, literature, <strong>business</strong>, and the environment.
               </p>
               <p>
-                Notably, I've lent my voice to professional trilingual voiceovers for telephone systems and videos.
+                Notably, I&apos;ve lent my voice to professional trilingual voiceovers for telephone systems and videos.
               </p>
               <p>
                 With a cross-cultural proficiency gained through experiences spanning Europe, USA, the UK, Middle East, and Asia, I bring a <strong>unique perspective</strong> to every interaction.
