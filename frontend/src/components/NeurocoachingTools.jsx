@@ -36,7 +36,7 @@ const NeurocoachingTools = () => {
             >
               {/* Icon */}
               <div className="w-16 h-16 mb-6 bg-[#E8833A]/10 rounded-full flex items-center justify-center text-[#E8833A]">
-                {icons[index]}
+                {getIcon(index)}
               </div>
               
               {/* Title */}
