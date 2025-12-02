@@ -34,7 +34,7 @@ const ChatWidget = () => {
               className="w-10 h-10 rounded-full object-cover"
             />
             <p className="text-gray-700 text-sm">
-              Hi there, have a question? Let's connect.
+              Hi there, have a question? Let&apos;s connect.
             </p>
           </div>
         </div>
