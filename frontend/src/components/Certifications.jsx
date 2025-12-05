@@ -62,11 +62,12 @@ const Certifications = () => {
           {certifications.map((cert) => (
             <div
               key={cert.id}
-              className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 group"
+              className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 group flex flex-col"
             >
               {/* Certificate Image */}
               <div 
-                className="relative aspect-[4/3] overflow-hidden cursor-pointer"
+                className="relative overflow-hidden cursor-pointer"
+                style={{ height: '220px' }}
                 onClick={() => setSelectedCert(cert)}
               >
                 <img
@@ -84,16 +85,21 @@ const Certifications = () => {
               </div>
 
               {/* Certificate Details */}
-              <div className="p-6">
-                <div className="flex items-start justify-between gap-4 mb-3">
-                  <h3 className="text-xl font-bold text-gray-800">{cert.title}</h3>
-                  <span className="text-xs bg-[#4ADE80]/10 text-[#4ADE80] px-2 py-1 rounded-full whitespace-nowrap">
+              <div className="p-6 flex flex-col flex-1">
+                {/* Title Section - Fixed height for 3 lines */}
+                <div className="flex items-start justify-between gap-3 mb-3">
+                  <h3 className="text-lg font-bold text-gray-800 line-clamp-3 min-h-[4.5rem]">{cert.title}</h3>
+                  <span className="text-xs bg-[#4ADE80]/10 text-[#4ADE80] px-2 py-1 rounded-full whitespace-nowrap flex-shrink-0">
                     {cert.accreditation}
                   </span>
                 </div>
+                
+                {/* Middle content */}
                 <p className="text-[#E8833A] font-medium text-sm mb-2">{cert.organization}</p>
-                <p className="text-gray-600 text-sm mb-3">{cert.description}</p>
-                <div className="flex items-center justify-between text-sm">
+                <p className="text-gray-600 text-sm mb-3 flex-1">{cert.description}</p>
+                
+                {/* Bottom content - stuck to bottom */}
+                <div className="flex items-center justify-between text-sm pt-3 border-t border-gray-100 mt-auto">
                   <span className="text-gray-500">{cert.course}</span>
                   <span className="text-gray-400">{cert.date}</span>
                 </div>
