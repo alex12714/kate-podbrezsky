@@ -13,6 +13,7 @@ import NeurocoachingTools from "./components/NeurocoachingTools";
 import FinalCTA from "./components/FinalCTA";
 import ChatWidget from "./components/ChatWidget";
 import IntakeForm from "./components/IntakeForm";
+import Footer from "./components/Footer";
 
 const Home = () => {
   return (
@@ -28,6 +29,7 @@ const Home = () => {
       <PowerfulTools />
       <NeurocoachingTools />
       <FinalCTA />
+      <Footer />
       <ChatWidget />
     </div>
   );
