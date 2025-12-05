@@ -12,6 +12,7 @@ import PowerfulTools from "./components/PowerfulTools";
 import NeurocoachingTools from "./components/NeurocoachingTools";
 import FinalCTA from "./components/FinalCTA";
 import ChatWidget from "./components/ChatWidget";
+import IntakeForm from "./components/IntakeForm";
 
 const Home = () => {
   return (
@@ -21,6 +22,7 @@ const Home = () => {
       <CalendlySection />
       <CoachingSection />
       <ProcessSteps />
+      <IntakeForm />
       <AboutKate />
       <Testimonials />
       <PowerfulTools />
