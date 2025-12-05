@@ -1,6 +1,5 @@
 import React from 'react';
-import { Phone } from 'lucide-react';
-import { heroContent, coachData } from '../data/mock';
+import { coachData } from '../data/mock';
 
 const HeroSection = () => {
   const renderHighlightedText = (text) => {
@@ -18,7 +17,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative min-h-screen bg-gradient-to-br from-[#1a2b3c] via-[#1f3345] to-[#2a3f4f] overflow-hidden">
+    <section className="relative bg-gradient-to-br from-[#1a2b3c] via-[#1f3345] to-[#2a3f4f] overflow-hidden">
       {/* Student Login Button */}
       <div className="absolute top-6 right-8 z-20">
         <a
@@ -32,50 +31,23 @@ const HeroSection = () => {
       </div>
 
       {/* Red decorative glow on left */}
-      <div className="absolute left-0 top-1/2 -translate-y-1/2 w-40 h-[600px] bg-gradient-to-r from-red-900/40 to-transparent blur-3xl" />
+      <div className="absolute left-0 top-1/3 w-40 h-[400px] bg-gradient-to-r from-red-900/40 to-transparent blur-3xl" />
 
-      <div className="container mx-auto px-8 lg:px-16 relative z-10 pt-24 pb-16">
-        <div className="flex flex-col lg:flex-row items-center justify-between min-h-[65vh]">
+      <div className="container mx-auto px-8 lg:px-16 relative z-10 pt-24 pb-8">
+        <div className="flex flex-col lg:flex-row items-center justify-between">
           {/* Left Content */}
           <div className="lg:w-[55%] text-left">
-            <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] xl:text-6xl font-serif text-white leading-tight mb-6">
-              {renderHighlightedText(heroContent.headline)}
+            <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] xl:text-6xl font-serif text-white leading-tight mb-4">
+              {renderHighlightedText("Ready to Take Your [ENGLISH] to the Next Level?")}
             </h1>
             
-            <p className="text-gray-400 text-lg mb-16">
-              {heroContent.subheadline}
+            <p className="text-gray-400 text-lg">
+              professional neuro language coach
             </p>
-
-            {/* CTA Buttons */}
-            <div className="flex flex-col items-center lg:items-start gap-4">
-              <a
-                href={heroContent.whatsappLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-[#4ADE80] hover:bg-[#22c55e] text-gray-900 font-semibold px-10 py-4 rounded-full flex items-center gap-3 transition-all duration-300 hover:scale-105 shadow-lg shadow-green-500/30"
-              >
-                {heroContent.ctaButton}
-                <span className="bg-white/30 rounded-full p-1.5">
-                  <Phone className="w-5 h-5" />
-                </span>
-              </a>
-              
-              <span className="text-white font-medium text-sm">OR</span>
-              
-              <a
-                href={heroContent.registerLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[#4ADE80] hover:text-[#22c55e] font-semibold flex items-center gap-2 transition-colors duration-300"
-              >
-                <span className="text-yellow-400">👉</span>
-                Register for Class Now
-              </a>
-            </div>
           </div>
 
           {/* Right Content - Coach Image */}
-          <div className="lg:w-[45%] relative mt-12 lg:mt-0 flex justify-center lg:justify-end">
+          <div className="lg:w-[45%] relative mt-8 lg:mt-0 flex justify-center lg:justify-end">
             {/* Decorative bracket shape */}
             <div className="absolute right-4 top-0 w-56 h-72 border-r-[6px] border-t-[6px] border-[#3d5a73]/60 rounded-tr-[40px]" />
             
@@ -92,9 +64,6 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
-
-      {/* Subtle transition element instead of hard divider */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-b from-transparent to-[#1a2b3c]/50" />
     </section>
   );
 };
