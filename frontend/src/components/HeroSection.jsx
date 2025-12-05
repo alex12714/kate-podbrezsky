@@ -37,13 +37,13 @@ const HeroSection = () => {
         <div className="flex flex-col lg:flex-row items-center justify-between">
           {/* Left Content */}
           <div className="lg:w-[55%] text-left">
-            <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] xl:text-6xl font-serif text-white leading-tight mb-4">
-              {renderHighlightedText("Ready to Take Your [ENGLISH] to the Next Level?")}
-            </h1>
-            
-            <p className="text-gray-400 text-lg">
-              professional neuro language coach
+            <p className="text-gray-400 text-lg mb-3 uppercase tracking-wider">
+              Professional Neuro Language Coach
             </p>
+            
+            <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] xl:text-6xl font-serif text-white leading-tight">
+              {renderHighlightedText("Let's Take Your [ENGLISH] to the Next Level")}
+            </h1>
           </div>
 
           {/* Right Content - Coach Image */}
