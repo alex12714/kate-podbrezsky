@@ -18,22 +18,10 @@ const HeroSection = () => {
 
   return (
     <section className="relative bg-gradient-to-br from-[#1a2b3c] via-[#1f3345] to-[#2a3f4f] overflow-hidden">
-      {/* Student Login Button */}
-      <div className="absolute top-6 right-8 z-20">
-        <a
-          href="https://study-english.softr.app/sign-in"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="bg-[#2980b9] hover:bg-[#3498db] text-white font-semibold px-6 py-3 rounded-md transition-colors duration-300"
-        >
-          Student Login
-        </a>
-      </div>
-
       {/* Red decorative glow on left */}
       <div className="absolute left-0 top-1/3 w-40 h-[400px] bg-gradient-to-r from-red-900/40 to-transparent blur-3xl" />
 
-      <div className="container mx-auto px-8 lg:px-16 relative z-10 pt-24 pb-8">
+      <div className="container mx-auto px-8 lg:px-16 relative z-10 pt-16 pb-8">
         <div className="flex flex-col lg:flex-row items-center justify-between">
           {/* Left Content */}
           <div className="lg:w-[55%] text-left">
