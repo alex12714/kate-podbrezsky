@@ -165,7 +165,7 @@ const IntakeForm = () => {
             </div>
 
             {/* Three Options */}
-            <div className="grid md:grid-cols-3 gap-6 mb-12">
+            <div className="grid md:grid-cols-3 gap-6 mb-8">
               <div 
                 onClick={() => { setFormData(prev => ({ ...prev, englishType: 'business' })); setShowForm(true); }}
                 className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 cursor-pointer hover:bg-white/20 transition-all duration-300 hover:scale-105 hover:-translate-y-1 border border-white/10 group"
