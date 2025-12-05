@@ -101,7 +101,10 @@ const Certifications = () => {
         <div className="mt-16 flex flex-wrap justify-center items-center gap-8">
           <div className="text-center">
             <p className="text-gray-400 text-sm mb-3">Accredited by</p>
-            <div className="flex items-center gap-6">
+            <div className="flex items-center gap-6 flex-wrap justify-center">
+              <div className="bg-white px-6 py-3 rounded-lg shadow-sm">
+                <span className="font-bold text-gray-700">University of Stirling</span>
+              </div>
               <div className="bg-white px-6 py-3 rounded-lg shadow-sm">
                 <span className="font-bold text-gray-700">ODLQC</span>
               </div>
