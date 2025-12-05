@@ -55,7 +55,7 @@ const Certifications = () => {
         </div>
 
         {/* Certificates Grid */}
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-3 gap-6">
           {certifications.map((cert) => (
             <div
               key={cert.id}
