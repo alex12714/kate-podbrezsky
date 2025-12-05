@@ -13,27 +13,30 @@ const Certifications = () => {
       course: "Degree granted by Royal Charter with authority of Academic Council",
       date: "June 2007",
       accreditation: "UK University",
-      image: "https://customer-assets.emergentagent.com/job_d44db25e-7eeb-45e6-94cf-85c99f7ff62d/artifacts/3erwpaf8_stirling-diploma.png"
+      image: "https://customer-assets.emergentagent.com/job_d44db25e-7eeb-45e6-94cf-85c99f7ff62d/artifacts/3erwpaf8_stirling-diploma.png",
+      imagePosition: "top"
     },
     {
       id: 2,
-      title: "TEFL / TESOL Certificate",
-      organization: "TEFL Scotland",
-      description: "Teaching English as a Foreign Language (TEFL) & Teaching English to Speakers of Other Languages (TESOL)",
-      course: "30-hour Grammar and Language Awareness Course",
-      date: "May 2010",
-      accreditation: "ODLQC Accredited",
-      image: "https://customer-assets.emergentagent.com/job_d44db25e-7eeb-45e6-94cf-85c99f7ff62d/artifacts/1f8fig7t_tefl-certificate.jpeg"
-    },
-    {
-      id: 3,
       title: "Neurolanguage Coach® Certification",
       organization: "ELC Language Coaching Certification",
       description: "Certificate of Language Coaching from Accredited Educational & Language Coaching Academy (AELCA)",
       course: "30 Continuing Coaching Education Hours",
       date: "November 2024",
       accreditation: "ICF CCE Accredited",
-      image: "https://customer-assets.emergentagent.com/job_d44db25e-7eeb-45e6-94cf-85c99f7ff62d/artifacts/kaj115lw_coaching-certificat.png"
+      image: "https://customer-assets.emergentagent.com/job_d44db25e-7eeb-45e6-94cf-85c99f7ff62d/artifacts/kaj115lw_coaching-certificat.png",
+      imagePosition: "center"
+    },
+    {
+      id: 3,
+      title: "TEFL / TESOL Certificate",
+      organization: "TEFL Scotland",
+      description: "Teaching English as a Foreign Language (TEFL) & Teaching English to Speakers of Other Languages (TESOL)",
+      course: "30-hour Grammar and Language Awareness Course",
+      date: "May 2010",
+      accreditation: "ODLQC Accredited",
+      image: "https://customer-assets.emergentagent.com/job_d44db25e-7eeb-45e6-94cf-85c99f7ff62d/artifacts/1f8fig7t_tefl-certificate.jpeg",
+      imagePosition: "top"
     }
   ];
 
