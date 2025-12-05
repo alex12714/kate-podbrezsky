@@ -142,69 +142,104 @@ const IntakeForm = () => {
   // Initial "Ready to Start" Section
   if (!showForm) {
     return (
-      <section className="py-20 px-8 bg-gradient-to-br from-[#1a2b3c] via-[#1f3345] to-[#2a3f4f] relative overflow-hidden">
-        <div className="absolute left-0 top-1/2 -translate-y-1/2 w-40 h-80 bg-red-900/30 blur-3xl rounded-full" />
+      <section className="relative overflow-hidden">
+        {/* Seamless gradient continuation from hero */}
+        <div className="bg-gradient-to-br from-[#1a2b3c] via-[#1f3345] to-[#2a3f4f] pt-8 pb-20 px-8">
+          {/* Decorative separator line */}
+          <div className="container mx-auto max-w-5xl mb-12">
+            <div className="flex items-center gap-4">
+              <div className="flex-1 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+              <span className="text-white/40 text-sm uppercase tracking-widest">Choose Your Path</span>
+              <div className="flex-1 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+            </div>
+          </div>
+          
+          <div className="container mx-auto max-w-5xl relative z-10">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-5xl font-serif text-white mb-4">
+                Ready to <span className="text-[#E8833A]">Start</span>?
+              </h2>
+              <p className="text-gray-300 text-lg max-w-2xl mx-auto">
+                Tell us about yourself and we&apos;ll recommend the perfect learning path for your English journey.
+              </p>
+            </div>
+
+            {/* Three Options */}
+            <div className="grid md:grid-cols-3 gap-6 mb-12">
+              <div 
+                onClick={() => { setFormData(prev => ({ ...prev, englishType: 'business' })); setShowForm(true); }}
+                className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 cursor-pointer hover:bg-white/20 transition-all duration-300 hover:scale-105 hover:-translate-y-1 border border-white/10 group"
+              >
+                <div className="w-16 h-16 bg-[#E8833A]/20 rounded-full flex items-center justify-center mb-6 group-hover:bg-[#E8833A]/30 transition-colors">
+                  <Briefcase className="w-8 h-8 text-[#E8833A]" />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-2">Business Coaching</h3>
+                <p className="text-gray-400 text-sm">
+                  For professionals who need confident English for work, meetings, and career growth.
+                </p>
+                <div className="mt-4 flex items-center text-[#E8833A] text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity">
+                  Get started <ArrowRight className="w-4 h-4 ml-1" />
+                </div>
+              </div>
+
+              <div 
+                onClick={() => { setFormData(prev => ({ ...prev, englishType: 'academic' })); setShowForm(true); }}
+                className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 cursor-pointer hover:bg-white/20 transition-all duration-300 hover:scale-105 hover:-translate-y-1 border border-white/10 group"
+              >
+                <div className="w-16 h-16 bg-[#4ADE80]/20 rounded-full flex items-center justify-center mb-6 group-hover:bg-[#4ADE80]/30 transition-colors">
+                  <GraduationCap className="w-8 h-8 text-[#4ADE80]" />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-2">Student Tutoring</h3>
+                <p className="text-gray-400 text-sm">
+                  For students preparing for exams, improving grades, or building academic English skills.
+                </p>
+                <div className="mt-4 flex items-center text-[#4ADE80] text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity">
+                  Get started <ArrowRight className="w-4 h-4 ml-1" />
+                </div>
+              </div>
+
+              <div 
+                onClick={() => { setFormData(prev => ({ ...prev, englishType: 'conversation' })); setShowForm(true); }}
+                className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 cursor-pointer hover:bg-white/20 transition-all duration-300 hover:scale-105 hover:-translate-y-1 border border-white/10 group"
+              >
+                <div className="w-16 h-16 bg-[#3b82f6]/20 rounded-full flex items-center justify-center mb-6 group-hover:bg-[#3b82f6]/30 transition-colors">
+                  <Users className="w-8 h-8 text-[#3b82f6]" />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-2">Group Sessions</h3>
+                <p className="text-gray-400 text-sm">
+                  Learn with others in small, interactive groups. Great for practice and community.
+                </p>
+                <div className="mt-4 flex items-center text-[#3b82f6] text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity">
+                  Get started <ArrowRight className="w-4 h-4 ml-1" />
+                </div>
+              </div>
+            </div>
+
+            <div className="text-center">
+              <button 
+                onClick={() => setShowForm(true)}
+                className="text-gray-400 hover:text-white transition-colors underline"
+              >
+                Not sure? Take our quick assessment →
+              </button>
+            </div>
+          </div>
+        </div>
         
-        <div className="container mx-auto max-w-5xl relative z-10">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-5xl font-serif text-white mb-4">
-              Ready to <span className="text-[#E8833A]">Start</span>?
-            </h2>
-            <p className="text-gray-300 text-lg max-w-2xl mx-auto">
-              Tell us about yourself and we&apos;ll recommend the perfect learning path for your English journey.
-            </p>
-          </div>
-
-          {/* Three Options */}
-          <div className="grid md:grid-cols-3 gap-6 mb-12">
-            <div 
-              onClick={() => { setFormData(prev => ({ ...prev, englishType: 'business' })); setShowForm(true); }}
-              className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 cursor-pointer hover:bg-white/20 transition-all duration-300 hover:scale-105 border border-white/10 group"
-            >
-              <div className="w-16 h-16 bg-[#E8833A]/20 rounded-full flex items-center justify-center mb-6 group-hover:bg-[#E8833A]/30 transition-colors">
-                <Briefcase className="w-8 h-8 text-[#E8833A]" />
-              </div>
-              <h3 className="text-xl font-bold text-white mb-2">Business Coaching</h3>
-              <p className="text-gray-400 text-sm">
-                For professionals who need confident English for work, meetings, and career growth.
-              </p>
-            </div>
-
-            <div 
-              onClick={() => { setFormData(prev => ({ ...prev, englishType: 'academic' })); setShowForm(true); }}
-              className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 cursor-pointer hover:bg-white/20 transition-all duration-300 hover:scale-105 border border-white/10 group"
-            >
-              <div className="w-16 h-16 bg-[#4ADE80]/20 rounded-full flex items-center justify-center mb-6 group-hover:bg-[#4ADE80]/30 transition-colors">
-                <GraduationCap className="w-8 h-8 text-[#4ADE80]" />
-              </div>
-              <h3 className="text-xl font-bold text-white mb-2">Student Tutoring</h3>
-              <p className="text-gray-400 text-sm">
-                For students preparing for exams, improving grades, or building academic English skills.
-              </p>
-            </div>
-
-            <div 
-              onClick={() => { setFormData(prev => ({ ...prev, englishType: 'conversation' })); setShowForm(true); }}
-              className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 cursor-pointer hover:bg-white/20 transition-all duration-300 hover:scale-105 border border-white/10 group"
-            >
-              <div className="w-16 h-16 bg-[#3b82f6]/20 rounded-full flex items-center justify-center mb-6 group-hover:bg-[#3b82f6]/30 transition-colors">
-                <Users className="w-8 h-8 text-[#3b82f6]" />
-              </div>
-              <h3 className="text-xl font-bold text-white mb-2">Group Sessions</h3>
-              <p className="text-gray-400 text-sm">
-                Learn with others in small, interactive groups. Great for practice and community.
-              </p>
-            </div>
-          </div>
-
-          <div className="text-center">
-            <button 
-              onClick={() => setShowForm(true)}
-              className="text-gray-400 hover:text-white transition-colors underline"
-            >
-              Not sure? Take our quick assessment →
-            </button>
-          </div>
+        {/* Diagonal white divider at bottom */}
+        <div className="bg-gradient-to-br from-[#1a2b3c] via-[#1f3345] to-[#2a3f4f]">
+          <svg
+            viewBox="0 0 1440 100"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className="w-full h-20 lg:h-24"
+            preserveAspectRatio="none"
+          >
+            <path
+              d="M0 100L1440 0V100H0Z"
+              fill="white"
+            />
+          </svg>
         </div>
       </section>
     );
