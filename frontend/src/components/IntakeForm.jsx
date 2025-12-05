@@ -144,9 +144,9 @@ const IntakeForm = () => {
     return (
       <section className="relative overflow-hidden">
         {/* Seamless gradient continuation from hero */}
-        <div className="bg-gradient-to-br from-[#1a2b3c] via-[#1f3345] to-[#2a3f4f] pt-8 pb-20 px-8">
+        <div className="bg-gradient-to-br from-[#1a2b3c] via-[#1f3345] to-[#2a3f4f] pt-4 pb-16 px-8">
           {/* Decorative separator line */}
-          <div className="container mx-auto max-w-5xl mb-12">
+          <div className="container mx-auto max-w-5xl mb-10">
             <div className="flex items-center gap-4">
               <div className="flex-1 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
               <span className="text-white/40 text-sm uppercase tracking-widest">Choose Your Path</span>
@@ -155,11 +155,11 @@ const IntakeForm = () => {
           </div>
           
           <div className="container mx-auto max-w-5xl relative z-10">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-5xl font-serif text-white mb-4">
+            <div className="text-center mb-10">
+              <h2 className="text-3xl md:text-4xl font-serif text-white mb-3">
                 Ready to <span className="text-[#E8833A]">Start</span>?
               </h2>
-              <p className="text-gray-300 text-lg max-w-2xl mx-auto">
+              <p className="text-gray-300 text-base max-w-2xl mx-auto">
                 Tell us about yourself and we&apos;ll recommend the perfect learning path for your English journey.
               </p>
             </div>
