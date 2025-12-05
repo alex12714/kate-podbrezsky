@@ -93,21 +93,8 @@ const HeroSection = () => {
         </div>
       </div>
 
-      {/* Diagonal White Section Divider */}
-      <div className="absolute bottom-0 left-0 right-0">
-        <svg
-          viewBox="0 0 1440 100"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className="w-full h-20 lg:h-24"
-          preserveAspectRatio="none"
-        >
-          <path
-            d="M0 100L1440 0V100H0Z"
-            fill="white"
-          />
-        </svg>
-      </div>
+      {/* Subtle transition element instead of hard divider */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-b from-transparent to-[#1a2b3c]/50" />
     </section>
   );
 };
