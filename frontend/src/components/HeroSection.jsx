@@ -35,7 +35,7 @@ const HeroSection = () => {
       <div className="absolute left-0 top-1/2 -translate-y-1/2 w-40 h-[600px] bg-gradient-to-r from-red-900/40 to-transparent blur-3xl" />
 
       <div className="container mx-auto px-8 lg:px-16 relative z-10 pt-24 pb-16">
-        <div className="flex flex-col lg:flex-row items-center justify-between min-h-[75vh]">
+        <div className="flex flex-col lg:flex-row items-center justify-between min-h-[65vh]">
           {/* Left Content */}
           <div className="lg:w-[55%] text-left">
             <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] xl:text-6xl font-serif text-white leading-tight mb-6">
