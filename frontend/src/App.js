@@ -7,6 +7,7 @@ import CalendlySection from "./components/CalendlySection";
 import CoachingSection from "./components/CoachingSection";
 import ProcessSteps from "./components/ProcessSteps";
 import AboutKate from "./components/AboutKate";
+import Certifications from "./components/Certifications";
 import Testimonials from "./components/Testimonials";
 import PowerfulTools from "./components/PowerfulTools";
 import NeurocoachingTools from "./components/NeurocoachingTools";
@@ -25,6 +26,7 @@ const Home = () => {
       <CoachingSection />
       <ProcessSteps />
       <AboutKate />
+      <Certifications />
       <Testimonials />
       <PowerfulTools />
       <NeurocoachingTools />
