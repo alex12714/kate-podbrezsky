@@ -7,23 +7,33 @@ const Certifications = () => {
   const certifications = [
     {
       id: 1,
+      title: "Bachelor of Arts (with Merit)",
+      organization: "The University of Stirling",
+      description: "English as a Foreign Language",
+      course: "Degree granted by Royal Charter with authority of Academic Council",
+      date: "June 2007",
+      accreditation: "UK University",
+      image: "https://customer-assets.emergentagent.com/job_d44db25e-7eeb-45e6-94cf-85c99f7ff62d/artifacts/3erwpaf8_stirling-diploma.png"
+    },
+    {
+      id: 2,
       title: "TEFL / TESOL Certificate",
       organization: "TEFL Scotland",
       description: "Teaching English as a Foreign Language (TEFL) & Teaching English to Speakers of Other Languages (TESOL)",
       course: "30-hour Grammar and Language Awareness Course",
       date: "May 2010",
       accreditation: "ODLQC Accredited",
-      image: "https://customer-assets.emergentagent.com/job_d44db25e-7eeb-45e6-94cf-85c99f7ff62d/artifacts/3nuzfkuw_image.png"
+      image: "https://customer-assets.emergentagent.com/job_d44db25e-7eeb-45e6-94cf-85c99f7ff62d/artifacts/1f8fig7t_tefl-certificate.jpeg"
     },
     {
-      id: 2,
+      id: 3,
       title: "Neurolanguage Coach® Certification",
       organization: "ELC Language Coaching Certification",
       description: "Certificate of Language Coaching from Accredited Educational & Language Coaching Academy (AELCA)",
       course: "30 Continuing Coaching Education Hours",
       date: "November 2024",
       accreditation: "ICF CCE Accredited",
-      image: "https://customer-assets.emergentagent.com/job_d44db25e-7eeb-45e6-94cf-85c99f7ff62d/artifacts/0v3irgz2_Screenshot%202025-12-05%20at%205.08.24%E2%80%AFAM.png"
+      image: "https://customer-assets.emergentagent.com/job_d44db25e-7eeb-45e6-94cf-85c99f7ff62d/artifacts/kaj115lw_coaching-certificat.png"
     }
   ];
 
