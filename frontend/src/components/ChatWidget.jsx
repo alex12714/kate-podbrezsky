@@ -73,7 +73,7 @@ const ChatWidget = () => {
             </div>
             <div className="bg-gray-50 rounded-lg p-4 mb-3">
               <img
-                src={`https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=weixin://contacts/profile/${wechatId}`}
+                src="/kate-wechat-qr.png"
                 alt="WeChat QR Code"
                 className="w-44 h-44 mx-auto"
               />
