@@ -29,7 +29,6 @@ const parseTextWithLinks = (text) => {
   let match;
 
   while ((match = urlRegex.exec(text)) !== null) {
-    // Add text before the URL
     if (match.index > lastIndex) {
       parts.push({ type: 'text', content: text.slice(lastIndex, match.index) });
     }
@@ -46,7 +45,6 @@ const parseTextWithLinks = (text) => {
     lastIndex = match.index + match[0].length;
   }
 
-  // Add remaining text
   if (lastIndex < text.length) {
     parts.push({ type: 'text', content: text.slice(lastIndex) });
   }
@@ -74,6 +72,7 @@ const YouTubeEmbed = ({ videoId }) => (
 const LinkPreview = ({ url }) => {
   const domain = new URL(url).hostname.replace('www.', '');
   const isClaudeArtifact = url.includes('claude.ai/public/artifacts');
+  const isZoom = url.includes('zoom.us');
 
   return (
     <a
@@ -82,12 +81,16 @@ const LinkPreview = ({ url }) => {
       rel="noopener noreferrer"
       className="my-2 flex items-center gap-3 p-3 bg-white border border-gray-200 rounded-xl hover:border-blue-300 hover:shadow-md transition-all group"
     >
-      <div className="w-10 h-10 bg-gradient-to-br from-blue-400 to-blue-600 rounded-lg flex items-center justify-center text-white flex-shrink-0">
-        {isClaudeArtifact ? '🤖' : '🔗'}
+      <div className={`w-10 h-10 rounded-lg flex items-center justify-center text-white flex-shrink-0 ${
+        isZoom ? 'bg-gradient-to-br from-blue-500 to-blue-700' :
+        isClaudeArtifact ? 'bg-gradient-to-br from-orange-400 to-orange-600' :
+        'bg-gradient-to-br from-blue-400 to-blue-600'
+      }`}>
+        {isZoom ? '📹' : isClaudeArtifact ? '🤖' : '🔗'}
       </div>
       <div className="flex-1 min-w-0">
         <p className="text-sm font-medium text-gray-800 group-hover:text-blue-600 truncate">
-          {isClaudeArtifact ? 'Claude Artifact - Interactive Exercise' : domain}
+          {isZoom ? 'Join Zoom Meeting' : isClaudeArtifact ? 'Claude Artifact - Interactive Exercise' : domain}
         </p>
         <p className="text-xs text-gray-500 truncate">{url}</p>
       </div>
@@ -139,6 +142,103 @@ const FormattedContent = ({ text }) => {
           </div>
         );
       })}
+    </div>
+  );
+};
+
+// Student Profile Modal
+const StudentProfileModal = ({ student, onClose }) => {
+  const [showContract, setShowContract] = useState(false);
+  const fields = student?.fields || {};
+
+  const name = fields["Name"] || "Student";
+  const totalLessons = fields["Total Lessons By Student"] || 0;
+  const contractHtml = fields["Student Contract HTML"] || "";
+  const email = fields["Email"] || "";
+  const phone = fields["Phone"] || "";
+  const startDate = fields["Start date"] || "";
+  const level = fields["Student Level"] || "";
+
+  if (showContract && contractHtml) {
+    return (
+      <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
+        <div className="bg-white rounded-2xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden flex flex-col">
+          <div className="bg-gradient-to-r from-orange-400 to-amber-500 px-6 py-4 flex items-center justify-between">
+            <h2 className="text-xl font-bold text-white">📄 Student Contract</h2>
+            <button onClick={() => setShowContract(false)} className="text-white/80 hover:text-white">
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+          <div className="flex-1 overflow-y-auto p-6">
+            <div
+              className="prose prose-sm max-w-none"
+              dangerouslySetInnerHTML={{ __html: contractHtml }}
+            />
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
+      <div className="bg-white rounded-2xl shadow-2xl max-w-md w-full overflow-hidden">
+        <div className="bg-gradient-to-r from-orange-400 to-amber-500 px-6 py-8 text-center">
+          <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center text-3xl font-bold text-orange-500 mx-auto mb-4">
+            {name.charAt(0).toUpperCase()}
+          </div>
+          <h2 className="text-2xl font-bold text-white">{name}</h2>
+          {level && <p className="text-white/80 mt-1">{level}</p>}
+        </div>
+
+        <div className="p-6 space-y-4">
+          <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl p-4 text-center">
+            <p className="text-3xl font-bold text-green-600">{totalLessons}</p>
+            <p className="text-sm text-green-700">Total Lessons Completed</p>
+          </div>
+
+          {startDate && (
+            <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-xl">
+              <span className="text-xl">📅</span>
+              <div>
+                <p className="text-xs text-gray-500">Student Since</p>
+                <p className="font-medium text-gray-800">{startDate}</p>
+              </div>
+            </div>
+          )}
+
+          {phone && (
+            <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-xl">
+              <span className="text-xl">📱</span>
+              <div>
+                <p className="text-xs text-gray-500">Phone</p>
+                <p className="font-medium text-gray-800">{phone}</p>
+              </div>
+            </div>
+          )}
+
+          {contractHtml && (
+            <button
+              onClick={() => setShowContract(true)}
+              className="w-full flex items-center justify-center gap-2 p-3 bg-blue-50 hover:bg-blue-100 rounded-xl text-blue-700 font-medium transition-colors"
+            >
+              <span>📄</span>
+              <span>View Contract</span>
+            </button>
+          )}
+        </div>
+
+        <div className="px-6 pb-6">
+          <button
+            onClick={onClose}
+            className="w-full py-3 bg-gray-100 hover:bg-gray-200 rounded-xl font-medium text-gray-700 transition-colors"
+          >
+            Close
+          </button>
+        </div>
+      </div>
     </div>
   );
 };
@@ -234,10 +334,9 @@ const Calendar = ({ lessons, selectedDate, onSelectDate }) => {
 };
 
 // Lesson Detail Panel
-const LessonDetailPanel = ({ lessons, onClose }) => {
-  if (!lessons || lessons.length === 0) return null;
+const LessonDetailPanel = ({ lesson, isUpcoming, onClose }) => {
+  if (!lesson) return null;
 
-  const lesson = lessons[0]; // Show first lesson of the day
   const fields = lesson.fields || {};
 
   const lessonDateTime = fields["Lesson Date Time"] || "Date not available";
@@ -245,19 +344,26 @@ const LessonDetailPanel = ({ lessons, onClose }) => {
   const vocabulary = fields["Vocabulary"] || "";
   const description = fields["Description"] || "";
   const status = fields["Status"] || "";
+  const zoomUrl = fields["Zoom Meeting URL"] || fields["Zoom URL"] || "";
+  const zoomMeetingId = fields["Zoom Meeting ID"] || "";
+  const lessonTitle = fields["Lesson"] || "";
 
   return (
     <div className="bg-white rounded-2xl shadow-lg overflow-hidden h-full flex flex-col">
-      <div className="bg-gradient-to-r from-orange-400 to-amber-500 px-6 py-4 flex items-center justify-between">
+      <div className={`px-6 py-4 flex items-center justify-between ${
+        isUpcoming
+          ? 'bg-gradient-to-r from-blue-500 to-indigo-600'
+          : 'bg-gradient-to-r from-orange-400 to-amber-500'
+      }`}>
         <div>
           <h3 className="font-bold text-white text-lg">{lessonDateTime}</h3>
           {status && (
             <span className={`text-xs px-2 py-0.5 rounded-full ${
               status === "Lesson completed"
                 ? "bg-green-100 text-green-700"
-                : "bg-blue-100 text-blue-700"
+                : "bg-white/20 text-white"
             }`}>
-              {status}
+              {isUpcoming ? '🗓️ Upcoming' : status}
             </span>
           )}
         </div>
@@ -269,6 +375,49 @@ const LessonDetailPanel = ({ lessons, onClose }) => {
       </div>
 
       <div className="flex-1 overflow-y-auto p-6 space-y-4">
+        {/* Zoom Link for upcoming lessons */}
+        {isUpcoming && (zoomUrl || zoomMeetingId) && (
+          <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-4">
+            <h4 className="font-semibold text-blue-800 mb-3 flex items-center gap-2">
+              <span>📹</span> Join Your Lesson
+            </h4>
+            {zoomUrl ? (
+              <a
+                href={zoomUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 p-4 bg-blue-600 hover:bg-blue-700 rounded-xl text-white transition-colors"
+              >
+                <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center text-2xl">
+                  📹
+                </div>
+                <div className="flex-1">
+                  <p className="font-bold">Join Zoom Meeting</p>
+                  <p className="text-sm text-white/80">Click to open Zoom</p>
+                </div>
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
+            ) : zoomMeetingId && (
+              <div className="p-4 bg-white rounded-xl border border-blue-200">
+                <p className="text-sm text-gray-600">Meeting ID:</p>
+                <p className="font-mono font-bold text-lg text-blue-800">{zoomMeetingId}</p>
+              </div>
+            )}
+          </div>
+        )}
+
+        {/* Lesson Title */}
+        {lessonTitle && (
+          <div className="bg-gray-50 rounded-xl p-4">
+            <h4 className="font-semibold text-gray-800 mb-1 flex items-center gap-2">
+              <span>📋</span> Lesson Topic
+            </h4>
+            <p className="text-gray-700">{lessonTitle}</p>
+          </div>
+        )}
+
         {/* Description/Summary */}
         {description && (
           <div className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl p-4">
@@ -305,7 +454,7 @@ const LessonDetailPanel = ({ lessons, onClose }) => {
           </div>
         )}
 
-        {!description && !homework && !vocabulary && (
+        {!description && !homework && !vocabulary && !isUpcoming && (
           <div className="text-center text-gray-500 py-8">
             <p>No details available for this lesson.</p>
           </div>
@@ -315,22 +464,29 @@ const LessonDetailPanel = ({ lessons, onClose }) => {
   );
 };
 
-// Scheduled Lesson Card
-const ScheduledLessonCard = ({ lesson }) => {
+// Upcoming Lesson Card
+const UpcomingLessonCard = ({ lesson, isSelected, onClick }) => {
   const fields = lesson.fields || {};
   const lessonDateTime = fields["Lesson Date Time"] || "Date not available";
-  const description = fields["Description"] || fields["Lesson"] || "";
+  const lessonTitle = fields["Lesson"] || "";
 
   return (
-    <div className="bg-gradient-to-r from-blue-500 to-indigo-600 rounded-2xl p-5 text-white shadow-lg">
-      <div className="flex items-start justify-between">
+    <button
+      onClick={onClick}
+      className={`w-full text-left rounded-2xl p-5 shadow-lg transition-all ${
+        isSelected
+          ? 'bg-gradient-to-r from-blue-600 to-indigo-700 ring-4 ring-blue-300'
+          : 'bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700'
+      }`}
+    >
+      <div className="flex items-start justify-between text-white">
         <div>
           <div className="flex items-center gap-2 mb-2">
             <span className="text-2xl">📅</span>
-            <span className="text-xs bg-white/20 px-2 py-1 rounded-full">Upcoming</span>
+            <span className="text-xs bg-white/20 px-2 py-1 rounded-full">Next Lesson</span>
           </div>
           <h3 className="font-bold text-xl mb-1">{lessonDateTime}</h3>
-          {description && <p className="text-white/80 text-sm">{description.substring(0, 100)}</p>}
+          {lessonTitle && <p className="text-white/80 text-sm">{lessonTitle}</p>}
         </div>
         <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center">
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -338,7 +494,8 @@ const ScheduledLessonCard = ({ lesson }) => {
           </svg>
         </div>
       </div>
-    </div>
+      <p className="text-white/70 text-sm mt-3">Tap to view details and join link →</p>
+    </button>
   );
 };
 
@@ -349,6 +506,8 @@ const StudentPortal = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [selectedDate, setSelectedDate] = useState(null);
+  const [selectedUpcoming, setSelectedUpcoming] = useState(false);
+  const [showProfile, setShowProfile] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -400,21 +559,33 @@ const StudentPortal = () => {
     }
   }, [studentId]);
 
-  // Separate scheduled and completed lessons
-  const { scheduledLessons, completedLessons } = useMemo(() => {
-    const scheduled = [];
-    const completed = [];
-
-    lessons.forEach(lesson => {
+  // Get next upcoming lesson (in the future)
+  const nextUpcomingLesson = useMemo(() => {
+    const now = new Date();
+    const futureScheduled = lessons.filter(lesson => {
       const status = lesson.fields?.Status || "";
-      if (status === "Lesson completed") {
-        completed.push(lesson);
-      } else {
-        scheduled.push(lesson);
-      }
+      const dateField = lesson.fields?.["Date and Time"];
+      if (status === "Lesson completed" || !dateField) return false;
+      const lessonDate = new Date(dateField);
+      return lessonDate > now;
     });
 
-    return { scheduledLessons: scheduled, completedLessons: completed };
+    // Sort by date ascending and get the closest one
+    futureScheduled.sort((a, b) => {
+      const dateA = new Date(a.fields?.["Date and Time"]);
+      const dateB = new Date(b.fields?.["Date and Time"]);
+      return dateA - dateB;
+    });
+
+    return futureScheduled[0] || null;
+  }, [lessons]);
+
+  // Completed lessons
+  const completedLessons = useMemo(() => {
+    return lessons.filter(lesson => {
+      const status = lesson.fields?.Status || "";
+      return status === "Lesson completed";
+    });
   }, [lessons]);
 
   // Get lessons for selected date
@@ -430,6 +601,21 @@ const StudentPortal = () => {
              lessonDate.getDate() === selectedDate.getDate();
     });
   }, [selectedDate, completedLessons]);
+
+  const handleSelectUpcoming = () => {
+    setSelectedUpcoming(true);
+    setSelectedDate(null);
+  };
+
+  const handleSelectDate = (date) => {
+    setSelectedDate(date);
+    setSelectedUpcoming(false);
+  };
+
+  const handleCloseDetail = () => {
+    setSelectedDate(null);
+    setSelectedUpcoming(false);
+  };
 
   if (loading) {
     return (
@@ -462,9 +648,12 @@ const StudentPortal = () => {
       <header className="bg-white shadow-sm">
         <div className="max-w-7xl mx-auto px-4 py-6">
           <div className="flex items-center gap-4">
-            <div className="w-12 h-12 bg-gradient-to-br from-orange-400 to-amber-500 rounded-full flex items-center justify-center text-white font-bold text-xl">
+            <button
+              onClick={() => setShowProfile(true)}
+              className="w-12 h-12 bg-gradient-to-br from-orange-400 to-amber-500 rounded-full flex items-center justify-center text-white font-bold text-xl hover:from-orange-500 hover:to-amber-600 transition-colors cursor-pointer"
+            >
               {studentName.charAt(0).toUpperCase()}
-            </div>
+            </button>
             <div>
               <h1 className="text-2xl font-bold text-gray-800">Welcome back, {studentName}! 👋</h1>
               <p className="text-gray-500">Your lesson history and materials</p>
@@ -475,16 +664,18 @@ const StudentPortal = () => {
 
       {/* Main Content */}
       <main className="max-w-7xl mx-auto px-4 py-8">
-        {/* Scheduled Lessons Section */}
-        {scheduledLessons.length > 0 && (
+        {/* Next Upcoming Lesson */}
+        {nextUpcomingLesson && (
           <section className="mb-8">
             <h2 className="text-xl font-semibold text-gray-800 mb-4 flex items-center gap-2">
-              <span>🗓️</span> Upcoming Lessons
+              <span>🗓️</span> Your Next Lesson
             </h2>
-            <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-              {scheduledLessons.map(lesson => (
-                <ScheduledLessonCard key={lesson.id} lesson={lesson} />
-              ))}
+            <div className="max-w-md">
+              <UpcomingLessonCard
+                lesson={nextUpcomingLesson}
+                isSelected={selectedUpcoming}
+                onClick={handleSelectUpcoming}
+              />
             </div>
           </section>
         )}
@@ -501,10 +692,10 @@ const StudentPortal = () => {
               <Calendar
                 lessons={completedLessons}
                 selectedDate={selectedDate}
-                onSelectDate={setSelectedDate}
+                onSelectDate={handleSelectDate}
               />
 
-              {!selectedDate && (
+              {!selectedDate && !selectedUpcoming && (
                 <p className="text-center text-gray-500 mt-4 text-sm">
                   Click on a highlighted date to view lesson details
                 </p>
@@ -512,18 +703,25 @@ const StudentPortal = () => {
             </div>
 
             {/* Detail Panel */}
-            <div className={`transition-all duration-300 ${selectedDate ? 'opacity-100' : 'opacity-50'}`}>
-              {selectedLessons && selectedLessons.length > 0 ? (
+            <div className={`transition-all duration-300 ${(selectedDate || selectedUpcoming) ? 'opacity-100' : 'opacity-50'}`}>
+              {selectedUpcoming && nextUpcomingLesson ? (
                 <LessonDetailPanel
-                  lessons={selectedLessons}
-                  onClose={() => setSelectedDate(null)}
+                  lesson={nextUpcomingLesson}
+                  isUpcoming={true}
+                  onClose={handleCloseDetail}
+                />
+              ) : selectedLessons && selectedLessons.length > 0 ? (
+                <LessonDetailPanel
+                  lesson={selectedLessons[0]}
+                  isUpcoming={false}
+                  onClose={handleCloseDetail}
                 />
               ) : (
-                <div className="bg-white rounded-2xl shadow-lg p-8 h-full flex items-center justify-center text-center">
+                <div className="bg-white rounded-2xl shadow-lg p-8 h-full flex items-center justify-center text-center min-h-[400px]">
                   <div>
                     <div className="text-5xl mb-4">📅</div>
                     <h3 className="text-lg font-semibold text-gray-800 mb-2">Select a Lesson</h3>
-                    <p className="text-gray-500">Click on a date in the calendar to view lesson details</p>
+                    <p className="text-gray-500">Click on your upcoming lesson or a date in the calendar to view details</p>
                   </div>
                 </div>
               )}
@@ -538,6 +736,14 @@ const StudentPortal = () => {
           <p>English Coaching Pro by Kate Podbrezsky</p>
         </div>
       </footer>
+
+      {/* Profile Modal */}
+      {showProfile && (
+        <StudentProfileModal
+          student={student}
+          onClose={() => setShowProfile(false)}
+        />
+      )}
     </div>
   );
 };
