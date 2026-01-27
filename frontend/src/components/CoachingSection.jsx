@@ -1,8 +1,11 @@
 import React from 'react';
 import { Phone } from 'lucide-react';
-import { coachingContent, heroContent } from '../data/mock';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const CoachingSection = () => {
+  const { t } = useLanguage();
+  const whatsappLink = "https://wa.link/nisn2y";
+
   const renderHighlightedText = (text) => {
     const parts = text.split(/\[(.*?)\]/);
     return parts.map((part, index) => {
@@ -24,29 +27,29 @@ const CoachingSection = () => {
       
       <div className="container mx-auto max-w-4xl text-center relative z-10">
         <h2 className="text-3xl md:text-4xl font-serif text-white mb-4">
-          {renderHighlightedText(coachingContent.title)}
+          {renderHighlightedText(t('coaching.title'))}
         </h2>
         
         <h3 className="text-xl md:text-2xl text-white font-bold mb-6">
-          {coachingContent.subtitle}
+          {t('coaching.subtitle')}
         </h3>
         
         <p className="text-gray-300 text-lg mb-6 max-w-2xl mx-auto">
-          {coachingContent.description}
+          {t('coaching.description')}
         </p>
         
-        <p className="text-gray-400 mb-2">{coachingContent.highlight}</p>
+        <p className="text-gray-400 mb-2">{t('coaching.highlight')}</p>
         <p className="text-white font-semibold text-lg mb-10">
-          {coachingContent.highlightSecondary}
+          {t('coaching.highlightSecondary')}
         </p>
         
         <a
-          href={heroContent.whatsappLink}
+          href={whatsappLink}
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-3 bg-[#4ADE80] hover:bg-[#22c55e] text-gray-900 font-semibold px-8 py-4 rounded-full transition-all duration-300 hover:scale-105 shadow-lg shadow-green-500/30"
         >
-          Book Your First Coaching Call Now
+          {t('common.bookCall')}
           <span className="bg-white/20 rounded-full p-1">
             <Phone className="w-5 h-5" />
           </span>

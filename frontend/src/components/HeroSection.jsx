@@ -1,7 +1,10 @@
 import React from 'react';
-import { coachData } from '../data/mock';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const HeroSection = () => {
+  const { t } = useLanguage();
+  const coachImage = "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/0G4MpFhMscifkcXgKcOa/media/6748ef4d48436375b44b0f4e.png";
+
   const renderHighlightedText = (text) => {
     const parts = text.split(/\[(.*?)\]/);
     return parts.map((part, index) => {
@@ -26,11 +29,11 @@ const HeroSection = () => {
           {/* Left Content */}
           <div className="lg:w-[55%] text-left">
             <p className="text-gray-400 text-lg mb-3 uppercase tracking-wider">
-              Professional Neuro Language Coach
+              {t('hero.tagline')}
             </p>
             
             <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] xl:text-6xl font-serif text-white leading-tight">
-              {renderHighlightedText("Let's Take Your [ENGLISH] to the Next Level")}
+              {renderHighlightedText(t('hero.headline'))}
             </h1>
           </div>
 
@@ -41,8 +44,8 @@ const HeroSection = () => {
             
             <div className="relative z-10">
               <img
-                src={coachData.image}
-                alt={coachData.name}
+                src={coachImage}
+                alt="Kate Podbrezsky"
                 className="w-72 lg:w-80 xl:w-96 h-auto object-cover object-top"
                 style={{ 
                   clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 85%)',

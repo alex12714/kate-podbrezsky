@@ -1,0 +1,370 @@
+{
+  "common": {
+    "bookCall": "Book Your First Coaching Call Now",
+    "getStarted": "Get started",
+    "back": "Back",
+    "continue": "Continue",
+    "backToOptions": "Back to options",
+    "previous": "Previous",
+    "next": "Next"
+  },
+  "hero": {
+    "tagline": "Professional Neuro Language Coach",
+    "headline": "Let's Take Your [ENGLISH] to the Next Level"
+  },
+  "coachIntro": {
+    "name": "KATE PODBREZSKY",
+    "title": "Language Coach",
+    "description": "I have a true passion for the power of effective communication. As an educator I will guide you on your unique journey to unwavering communication confidence."
+  },
+  "intakeForm": {
+    "chooseYourPath": "Choose Your Path",
+    "readyToStart": "Ready to Start?",
+    "readyToStartDesc": "Tell us about yourself and we'll recommend the perfect learning path for your English journey.",
+    "businessCoaching": "Business Coaching",
+    "businessCoachingDesc": "For professionals who need confident English for work, meetings, and career growth.",
+    "studentTutoring": "Student Tutoring",
+    "studentTutoringDesc": "For students preparing for exams, improving grades, or building academic English skills.",
+    "groupSessions": "Group Sessions",
+    "groupSessionsDesc": "Learn with others in small, interactive groups. Great for practice and community.",
+    "notSure": "Not sure? Take our quick assessment →",
+    "steps": {
+      "getStarted": "Get Started",
+      "profile": "Profile",
+      "format": "Format",
+      "goals": "Goals",
+      "result": "Result"
+    },
+    "step0": {
+      "title": "What brings you here today?",
+      "subtitle": "Select the option that best describes your needs",
+      "businessCareer": "Business & Career",
+      "businessCareerDesc": "Work, meetings, presentations",
+      "academicExams": "Academic / Exams",
+      "academicExamsDesc": "IELTS, TOEFL, school",
+      "dailyConversation": "Daily Conversation",
+      "dailyConversationDesc": "Travel, social, confidence",
+      "travelRelocation": "Travel & Relocation",
+      "travelRelocationDesc": "Moving abroad, visa prep",
+      "personalDevelopment": "Personal Development",
+      "personalDevelopmentDesc": "Self-improvement, hobbies"
+    },
+    "step1": {
+      "title": "Tell us about yourself",
+      "subtitle": "Basic information to personalize your experience",
+      "fullName": "Full Name",
+      "fullNamePlaceholder": "Your name",
+      "email": "Email",
+      "emailPlaceholder": "your@email.com",
+      "whatsapp": "WhatsApp / Telegram",
+      "whatsappPlaceholder": "+1 234 567 8900",
+      "countryTimezone": "Country & Time Zone",
+      "countryPlaceholder": "Country, GMT+X",
+      "currentLevel": "What's your current English level?",
+      "levels": {
+        "beginner": "Beginner (A0-A1)",
+        "elementary": "Elementary (A2)",
+        "intermediate": "Intermediate (B1)",
+        "upperIntermediate": "Upper-Intermediate (B2)",
+        "advanced": "Advanced (C1+)"
+      },
+      "englishUse": "How do you currently use English? (Select all that apply)",
+      "uses": {
+        "work": "Work",
+        "business": "Business",
+        "study": "Study",
+        "travel": "Travel",
+        "relocation": "Relocation",
+        "sociallife": "Social life",
+        "notusing yet": "Not using yet"
+      },
+      "mainDifficulty": "What's your main difficulty right now? (Choose 1-2)",
+      "difficulties": {
+        "speakingConfidence": "Speaking with confidence",
+        "understandingFastSpeech": "Understanding fast speech",
+        "vocabulary": "Vocabulary",
+        "grammar": "Grammar",
+        "pronunciation": "Pronunciation",
+        "businessCommunication": "Business communication",
+        "interviewsPresentations": "Interviews & presentations"
+      }
+    },
+    "step2": {
+      "title": "How would you like to learn?",
+      "subtitle": "Help us find the perfect format for you",
+      "studyPreference": "How do you prefer to study?",
+      "preferences": {
+        "oneOnOne": "1-on-1 Coaching",
+        "oneOnOneDesc": "Personal attention, customized pace",
+        "smallGroup": "Small Group (3-6)",
+        "smallGroupDesc": "Learn with peers, practice together",
+        "selfStudy": "Self-Study + Support",
+        "selfStudyDesc": "Independent learning with coach guidance",
+        "notSure": "Not sure",
+        "notSureDesc": "Want a recommendation"
+      },
+      "importantFactor": "What is most important for you?",
+      "factors": {
+        "fastResults": "Fast results",
+        "flexibleSchedule": "Flexible schedule",
+        "lowCost": "Low cost",
+        "strongStructure": "Strong structure",
+        "personalSupport": "Personal support"
+      },
+      "readyToInvest": "Are you currently ready to invest in your English?",
+      "investOptions": {
+        "ready": "Yes, I'm ready to invest",
+        "considering": "I'm considering it",
+        "exploring": "Not right now, just exploring"
+      },
+      "budgetRange": "Monthly investment comfort zone (optional)",
+      "budgetOptions": [
+        "€50-100",
+        "€100-300",
+        "€300-800",
+        "€800+"
+      ]
+    },
+    "step3": {
+      "title": "Your Goals & Motivation",
+      "subtitle": "Help us understand what drives you",
+      "goalResult": "What result do you want to achieve in 3-6 months?",
+      "goalResultPlaceholder": "e.g., Speak confidently with foreign clients, Pass IELTS, Get a higher-paid job...",
+      "blockers": "What has stopped you from speaking English confidently so far?",
+      "blockerOptions": {
+        "fearOfMistakes": "Fear of mistakes",
+        "badExperience": "Bad previous experience",
+        "noTime": "No time",
+        "noSystem": "No clear system",
+        "noPractice": "No speaking practice",
+        "lackMotivation": "Lack of motivation"
+      },
+      "importanceScale": "On a scale of 1-10, how important is English for your life right now?",
+      "lifeChange": "If you spoke English confidently, what would change in your life?",
+      "lifeChangePlaceholder": "Dream big! Tell us how confident English would transform your life...",
+      "funQuestion": "🎯 Fun question: If English were a superpower, what would you do with it first?",
+      "funQuestionPlaceholder": "Travel the world? Close a million-dollar deal? Make friends everywhere?"
+    },
+    "step4": {
+      "title": "Your Personalized Recommendation",
+      "subtitle": "Based on your answers, here's what we suggest",
+      "bookSession": "Would you like us to book your first session?",
+      "bookOptions": {
+        "yes": "Yes, I want a personalized session",
+        "later": "Maybe later",
+        "no": "No, thanks"
+      },
+      "successMessage": "🎉 Amazing! We'll be in touch within 24 hours to schedule your session.",
+      "chatOnWhatsApp": "Chat on WhatsApp Now"
+    },
+    "recommendations": {
+      "premium": {
+        "title": "High-Ticket Coaching Strategy Call",
+        "duration": "60 minutes",
+        "description": "Perfect for professionals who want accelerated results. Get a personalized roadmap to confident business English."
+      },
+      "group": {
+        "title": "Group Placement Session",
+        "duration": "30 minutes",
+        "description": "Find your perfect group and level. Learn with peers who share your goals and timeline."
+      },
+      "intro": {
+        "title": "Free English Diagnostic Call",
+        "duration": "20 minutes",
+        "description": "No pressure, no commitment. Let's assess your level and explore what's possible for you."
+      },
+      "standard": {
+        "title": "Personalized Strategy Session",
+        "duration": "45 minutes",
+        "description": "Get clarity on your English journey with a customized plan designed for your unique situation."
+      }
+    }
+  },
+  "calendly": {
+    "title": "45 Minute Call",
+    "duration": "45 min",
+    "conferenceDetails": "Web conferencing details provided upon confirmation.",
+    "description": "This is a free introductory session to get to know about you and your learning goals",
+    "selectDateTime": "Select a Date & Time",
+    "availableTimes": "Available times for",
+    "timezone": "Time zone: UTC Time",
+    "poweredBy": "powered by"
+  },
+  "coaching": {
+    "title": "What You'll Get During The [Coaching]",
+    "subtitle": "First Free 20 minute Coaching Call",
+    "description": "Challenge yourself and broaden your horizons. As you grasp the language, you'll feel a surge in confidence, making connections and expressing yourself in new and fulfilling ways.",
+    "highlight": "Learning English Online isn't just about words",
+    "highlightSecondary": "it's about unlocking doors to new meaningful experiences and relationships."
+  },
+  "processSteps": {
+    "step1": {
+      "title": "What You'll Do",
+      "highlight": "Before the Call",
+      "description": "To make the most of our time together, consider jotting down a few points about your language goals and any specific areas you'd like to focus on.",
+      "secondaryText": "Prepare quiet room where you can concentrate, have a good internet connection and prepare to turn on your camera during the Zoom session."
+    },
+    "step2": {
+      "title": "What Happens",
+      "highlight": "During the Call",
+      "description": "We'll discuss your language background, goals, and any challenges you might be facing. This is a fantastic opportunity for us to get to know each other better.",
+      "secondaryText": "I will ask you to share your current comfort level, challenges, and desired outcomes, so we can tailor the coaching to your unique journey."
+    },
+    "step3": {
+      "title": "What to Expect",
+      "highlight": "After the Call",
+      "description": "Upon deciding to proceed, we'll smoothly transition into the onboarding process, where we'll set the foundation for our collaboration.",
+      "secondaryText": "This includes signing the contract, tailoring a bespoke coaching plan to your goals, and crafting a convenient schedule that ensures consistent progress toward mastering your desired language skills."
+    }
+  },
+  "about": {
+    "title": "About [Kate]",
+    "paragraph1": "My background encompasses diverse roles, including English coaching, translation, consecutive and simultaneous interpreting.",
+    "paragraph2": "I've honed my skills in proofreading and transcription across a spectrum of fields— education, local government, health, literature, business, and the environment.",
+    "paragraph3": "Notably, I've lent my voice to professional trilingual voiceovers for telephone systems and videos.",
+    "paragraph4": "With a cross-cultural proficiency gained through experiences spanning Europe, USA, the UK, Middle East, and Asia, I bring a unique perspective to every interaction."
+  },
+  "certifications": {
+    "badge": "Professional Credentials",
+    "title": "Diplomas & Certifications",
+    "subtitle": "Internationally recognized qualifications ensuring the highest standards in language coaching and education.",
+    "accreditedBy": "Accredited by",
+    "certs": {
+      "stirling": {
+        "title": "Bachelor of Arts (with Merit)",
+        "organization": "The University of Stirling",
+        "description": "English as a Foreign Language",
+        "course": "Degree granted by Royal Charter with authority of Academic Council",
+        "date": "June 2007",
+        "accreditation": "UK University"
+      },
+      "neuro": {
+        "title": "Neurolanguage Coach® Certification",
+        "organization": "ELC Language Coaching Certification",
+        "description": "Certificate of Language Coaching from Accredited Educational & Language Coaching Academy (AELCA)",
+        "course": "30 Continuing Coaching Education Hours",
+        "date": "November 2024",
+        "accreditation": "ICF CCE Accredited"
+      },
+      "tefl": {
+        "title": "TEFL / TESOL Certificate",
+        "organization": "TEFL Scotland",
+        "description": "Teaching English as a Foreign Language (TEFL) & Teaching English to Speakers of Other Languages (TESOL)",
+        "course": "30-hour Grammar and Language Awareness Course",
+        "date": "May 2010",
+        "accreditation": "ODLQC Accredited"
+      }
+    }
+  },
+  "testimonials": {
+    "title": "Why They Recommend Having Kate",
+    "subtitle": "As a Personal Language Coach",
+    "description": "Learning a language, like English, is an incredible journey that offers both personal and professional growth.",
+    "reviews": {
+      "martin": {
+        "name": "MARTIN JONES",
+        "title": "Businessman, Brazil",
+        "quote": "I really enjoyed language coaching with Kate. She is really good at understanding aspects of international business and how things work on a daily basis - that was valuable to me"
+      },
+      "shawn": {
+        "name": "SHAWN PARKER",
+        "title": "Student, USA",
+        "quote": "Kate as a teacher is really awesome. She makes learning fun and helps me understand things that seem hard. She really cares about teaching."
+      },
+      "jessica": {
+        "name": "JESSICA SANDERS",
+        "title": "Parent, UK",
+        "quote": "Kate has been a wonderful teacher for my kid as they learn English. She is patient and kind, and my child feels more confident with her help. I really like the fact Kate is using kids personal interests to help them learn."
+      },
+      "fiona": {
+        "name": "FIONA WU",
+        "title": "Parent, Hong Kong",
+        "quote": "I'm truly grateful for this coaching service as it has not only enhanced Kevin's English proficiency but also sparked his enthusiasm for learning. I highly recommend this service to other parents looking to support their teenagers in mastering the English language."
+      },
+      "mia": {
+        "name": "MIA CHEUNG",
+        "title": "Parent, Hong Kong",
+        "quote": "Ocean found the sessions incredibly beneficial. Kate's expertise and practical insights really resonated with Ocean's learning style. These sessions have not only improved Ocean's language skills but also improved his real-world knowledge."
+      },
+      "sharon": {
+        "name": "SHARON CHENG",
+        "title": "Parent, Hong Kong",
+        "quote": "Kate made lessons just right for Donna. It wasn't boring at all! I totally suggest this coaching for other kids like my Donna who want to get better at languages, but need a gentle push towards their learning."
+      }
+    }
+  },
+  "powerfulTools": {
+    "title": "These Powerful Tools Will",
+    "subtitle": "Propel Your Learning",
+    "description": "I utilize a diverse range of tools to deliver engaging, effective, and personalized learning experiences for my students.",
+    "tools": [
+      "Platforms like Quill and ChatGPT will create tailored exercises that target your specific grammar and vocabulary needs",
+      "Diffit will help you with reading passages and comprehension questions",
+      "Wordwall and Miro will create dynamic activities, such as matching games and digital brainstorming sessions",
+      "With Zoom as primary platform for live classes, you will get AI summaries to measure your progress",
+      "Resources like BBC Learning English and IXL will provide reliable, high-quality language content and exercises"
+    ]
+  },
+  "neurocoaching": {
+    "title": "Essential Neurocoaching Tools",
+    "subtitle": "To Enhance Your Language Skill",
+    "description": "I utilize a diverse range of tools to deliver engaging, effective, and personalized learning experiences for my students.",
+    "tools": {
+      "emotional": {
+        "title": "Emotional",
+        "highlight": "Connection",
+        "description": "Emotionally engaging content activates the brain's reward centers, enhancing learning and memory.",
+        "detail": "I will encourage you to discuss topics you're passionate about or use storytelling to make lessons more relatable and impactful"
+      },
+      "active": {
+        "title": "Active",
+        "highlight": "Recall",
+        "description": "Actively recalling information, such as through quizzes or self-explanation, strengthens memory pathways.",
+        "detail": "I will prompt you to summarize stories or explain grammar rules aloud to reinforce what you've learned."
+      },
+      "growth": {
+        "title": "Growth",
+        "highlight": "Mindset",
+        "description": "Understanding that the brain is adaptable fosters a growth mindset in my students, encouraging them to view challenges as part of the learning process.",
+        "detail": "As a Coach I will promote this by celebrating your progress, emphasizing that your language skills grow with practice and perseverance."
+      }
+    }
+  },
+  "finalCta": {
+    "title": "Are you [READY]?",
+    "quote": "\"The best time to start was yesterday, but the best next time is today.\"",
+    "description": "Take the first step towards language confidence and sign up for personalized language coaching now.",
+    "secondaryText": "With tailored lessons and expert guidance, I will guide you to mastering English confidence in no time.",
+    "bottomTitle": "What Are You Waiting For?",
+    "bottomSubtitle": "Get Confident in Your [ENGLISH] Now!"
+  },
+  "footer": {
+    "brandDescription": "Professional neuro language coaching to help you achieve confident English communication.",
+    "studentLogin": "Student Login",
+    "quickLinks": "Quick Links",
+    "businessCoaching": "Business Coaching",
+    "studentTutoring": "Student Tutoring",
+    "groupSessions": "Group Sessions",
+    "aboutKate": "About Kate",
+    "testimonials": "Testimonials",
+    "services": "Services",
+    "oneOnOneCoaching": "1-on-1 Coaching",
+    "smallGroupClasses": "Small Group Classes",
+    "ieltsPreparation": "IELTS Preparation",
+    "businessEnglish": "Business English",
+    "conversationPractice": "Conversation Practice",
+    "getInTouch": "Get in Touch",
+    "whatsappChat": "WhatsApp Chat",
+    "location": "Hong Kong, Europe & Middle East",
+    "copyright": "Kate Podbrezsky. All rights reserved.",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service"
+  },
+  "chatWidget": {
+    "greeting": "Hi there, have a question? Let's connect on WhatsApp."
+  },
+  "languageSwitcher": {
+    "en": "English",
+    "zh": "中文"
+  }
+}

@@ -1,10 +1,56 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import { testimonials } from '../data/mock';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const Testimonials = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [itemsPerView, setItemsPerView] = useState(3);
+  const { t } = useLanguage();
+
+  const testimonials = [
+    {
+      id: 1,
+      nameKey: 'testimonials.reviews.martin.name',
+      titleKey: 'testimonials.reviews.martin.title',
+      quoteKey: 'testimonials.reviews.martin.quote',
+      image: "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/locatation/0G4MpFhMscifkcXgKcOa/images/1087a762-02b6-4d25-bda0-2dbfa3b369f6.jpeg"
+    },
+    {
+      id: 2,
+      nameKey: 'testimonials.reviews.shawn.name',
+      titleKey: 'testimonials.reviews.shawn.title',
+      quoteKey: 'testimonials.reviews.shawn.quote',
+      image: "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/locatation/0G4MpFhMscifkcXgKcOa/images/75fdbf27-b9be-4702-8948-ea4436a8b2a4.jpeg"
+    },
+    {
+      id: 3,
+      nameKey: 'testimonials.reviews.jessica.name',
+      titleKey: 'testimonials.reviews.jessica.title',
+      quoteKey: 'testimonials.reviews.jessica.quote',
+      image: "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/locatation/0G4MpFhMscifkcXgKcOa/images/1fe23f84-8e9d-48e3-b719-ae4932280ebf.jpeg"
+    },
+    {
+      id: 4,
+      nameKey: 'testimonials.reviews.fiona.name',
+      titleKey: 'testimonials.reviews.fiona.title',
+      quoteKey: 'testimonials.reviews.fiona.quote',
+      image: "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/0G4MpFhMscifkcXgKcOa/media/658b4389d56b0dc6ef278b95.png"
+    },
+    {
+      id: 5,
+      nameKey: 'testimonials.reviews.mia.name',
+      titleKey: 'testimonials.reviews.mia.title',
+      quoteKey: 'testimonials.reviews.mia.quote',
+      image: "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/0G4MpFhMscifkcXgKcOa/media/658b43c3e00b8749f31d5aab.png"
+    },
+    {
+      id: 6,
+      nameKey: 'testimonials.reviews.sharon.name',
+      titleKey: 'testimonials.reviews.sharon.title',
+      quoteKey: 'testimonials.reviews.sharon.quote',
+      image: "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/0G4MpFhMscifkcXgKcOa/media/658b45e8096557cb19b0f0ff.png"
+    }
+  ];
 
   useEffect(() => {
     const handleResize = () => {
@@ -37,13 +83,13 @@ const Testimonials = () => {
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-serif text-gray-800 mb-4">
-            Why They Recommend Having Kate
+            {t('testimonials.title')}
           </h2>
           <h3 className="text-xl md:text-2xl text-gray-700 font-bold">
-            As a Personal Language Coach
+            {t('testimonials.subtitle')}
           </h3>
           <p className="text-gray-500 mt-4 max-w-2xl mx-auto">
-            Learning a language, like English, is an incredible journey that offers both personal and professional growth.
+            {t('testimonials.description')}
           </p>
         </div>
 
@@ -67,22 +113,22 @@ const Testimonials = () => {
                     <div className="flex items-center gap-4 mb-4">
                       <img
                         src={testimonial.image}
-                        alt={testimonial.name}
+                        alt={t(testimonial.nameKey)}
                         className="w-16 h-16 rounded-full object-cover"
                       />
                       <div>
                         <h4 className="font-bold text-gray-800">
-                          {testimonial.name}
+                          {t(testimonial.nameKey)}
                         </h4>
                         <p className="text-gray-500 text-sm">
-                          {testimonial.title}
+                          {t(testimonial.titleKey)}
                         </p>
                       </div>
                     </div>
                     
                     {/* Quote */}
                     <p className="text-gray-600 text-sm leading-relaxed italic">
-                      &quot;{testimonial.quote}&quot;
+                      &quot;{t(testimonial.quoteKey)}&quot;
                     </p>
                   </div>
                 </div>
@@ -94,7 +140,7 @@ const Testimonials = () => {
           <button
             onClick={prevSlide}
             className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-gray-50 transition-colors"
-            aria-label="Previous"
+            aria-label={t('common.previous')}
           >
             <ChevronLeft className="w-6 h-6 text-gray-600" />
           </button>
@@ -102,7 +148,7 @@ const Testimonials = () => {
           <button
             onClick={nextSlide}
             className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-gray-50 transition-colors"
-            aria-label="Next"
+            aria-label={t('common.next')}
           >
             <ChevronRight className="w-6 h-6 text-gray-600" />
           </button>

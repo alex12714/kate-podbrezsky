@@ -1,0 +1,370 @@
+{
+  "common": {
+    "bookCall": "立即预约您的首次辅导电话",
+    "getStarted": "开始",
+    "back": "返回",
+    "continue": "继续",
+    "backToOptions": "返回选项",
+    "previous": "上一步",
+    "next": "下一步"
+  },
+  "hero": {
+    "tagline": "专业神经语言教练",
+    "headline": "让我们将您的[英语]提升到新的水平"
+  },
+  "coachIntro": {
+    "name": "凯特·波德布雷兹斯基",
+    "title": "语言教练",
+    "description": "我对有效沟通的力量充满热情。作为一名教育者，我将引导您在独特的旅程中建立坚定的沟通信心。"
+  },
+  "intakeForm": {
+    "chooseYourPath": "选择您的学习路径",
+    "readyToStart": "准备好开始了吗？",
+    "readyToStartDesc": "告诉我们您的情况，我们将为您的英语学习之旅推荐最适合的学习路径。",
+    "businessCoaching": "商务英语辅导",
+    "businessCoachingDesc": "适合需要在工作、会议和职业发展中自信使用英语的专业人士。",
+    "studentTutoring": "学生辅导",
+    "studentTutoringDesc": "适合准备考试、提高成绩或培养学术英语技能的学生。",
+    "groupSessions": "小组课程",
+    "groupSessionsDesc": "与他人一起在小型互动小组中学习。非常适合练习和建立社区。",
+    "notSure": "不确定？参加我们的快速评估 →",
+    "steps": {
+      "getStarted": "开始",
+      "profile": "个人资料",
+      "format": "学习形式",
+      "goals": "目标",
+      "result": "结果"
+    },
+    "step0": {
+      "title": "今天是什么让您来到这里？",
+      "subtitle": "选择最能描述您需求的选项",
+      "businessCareer": "商务与职业",
+      "businessCareerDesc": "工作、会议、演示",
+      "academicExams": "学术/考试",
+      "academicExamsDesc": "雅思、托福、学校",
+      "dailyConversation": "日常对话",
+      "dailyConversationDesc": "旅行、社交、自信",
+      "travelRelocation": "旅行与移居",
+      "travelRelocationDesc": "移居海外、签证准备",
+      "personalDevelopment": "个人发展",
+      "personalDevelopmentDesc": "自我提升、兴趣爱好"
+    },
+    "step1": {
+      "title": "告诉我们关于您的情况",
+      "subtitle": "基本信息以个性化您的体验",
+      "fullName": "全名",
+      "fullNamePlaceholder": "您的姓名",
+      "email": "电子邮件",
+      "emailPlaceholder": "your@email.com",
+      "whatsapp": "WhatsApp / Telegram",
+      "whatsappPlaceholder": "+1 234 567 8900",
+      "countryTimezone": "国家和时区",
+      "countryPlaceholder": "国家, GMT+X",
+      "currentLevel": "您目前的英语水平是什么？",
+      "levels": {
+        "beginner": "初学者 (A0-A1)",
+        "elementary": "初级 (A2)",
+        "intermediate": "中级 (B1)",
+        "upperIntermediate": "中高级 (B2)",
+        "advanced": "高级 (C1+)"
+      },
+      "englishUse": "您目前如何使用英语？（可多选）",
+      "uses": {
+        "work": "工作",
+        "business": "商务",
+        "study": "学习",
+        "travel": "旅行",
+        "relocation": "移居",
+        "sociallife": "社交生活",
+        "notusing yet": "尚未使用"
+      },
+      "mainDifficulty": "您目前的主要困难是什么？（选择1-2个）",
+      "difficulties": {
+        "speakingConfidence": "自信地说英语",
+        "understandingFastSpeech": "理解快速语速",
+        "vocabulary": "词汇量",
+        "grammar": "语法",
+        "pronunciation": "发音",
+        "businessCommunication": "商务沟通",
+        "interviewsPresentations": "面试和演示"
+      }
+    },
+    "step2": {
+      "title": "您想如何学习？",
+      "subtitle": "帮助我们为您找到最适合的学习形式",
+      "studyPreference": "您偏好哪种学习方式？",
+      "preferences": {
+        "oneOnOne": "一对一辅导",
+        "oneOnOneDesc": "个人关注，定制进度",
+        "smallGroup": "小组课程 (3-6人)",
+        "smallGroupDesc": "与同伴一起学习、练习",
+        "selfStudy": "自学 + 支持",
+        "selfStudyDesc": "在教练指导下独立学习",
+        "notSure": "不确定",
+        "notSureDesc": "需要推荐"
+      },
+      "importantFactor": "对您来说什么最重要？",
+      "factors": {
+        "fastResults": "快速见效",
+        "flexibleSchedule": "灵活时间安排",
+        "lowCost": "低成本",
+        "strongStructure": "结构化教学",
+        "personalSupport": "个人支持"
+      },
+      "readyToInvest": "您目前准备好投资学习英语了吗？",
+      "investOptions": {
+        "ready": "是的，我准备好投资了",
+        "considering": "我正在考虑中",
+        "exploring": "现在还没有，只是了解一下"
+      },
+      "budgetRange": "每月投资舒适区间（可选）",
+      "budgetOptions": [
+        "HK$400-800",
+        "HK$800-2,500",
+        "HK$2,500-7,000",
+        "HK$7,000+"
+      ]
+    },
+    "step3": {
+      "title": "您的目标与动力",
+      "subtitle": "帮助我们了解是什么驱动着您",
+      "goalResult": "您希望在3-6个月内达到什么结果？",
+      "goalResultPlaceholder": "例如：自信地与外国客户交流、通过雅思考试、获得更高薪的工作...",
+      "blockers": "是什么阻止了您自信地说英语？",
+      "blockerOptions": {
+        "fearOfMistakes": "害怕犯错",
+        "badExperience": "之前有不好的学习经历",
+        "noTime": "没有时间",
+        "noSystem": "没有清晰的学习体系",
+        "noPractice": "缺乏口语练习",
+        "lackMotivation": "缺乏动力"
+      },
+      "importanceScale": "在1-10的评分中，英语对您目前的生活有多重要？",
+      "lifeChange": "如果您能自信地说英语，您的生活会有什么改变？",
+      "lifeChangePlaceholder": "大胆梦想！告诉我们自信的英语会如何改变您的生活...",
+      "funQuestion": "🎯 趣味问题：如果英语是一种超能力，您会首先用它做什么？",
+      "funQuestionPlaceholder": "环游世界？达成百万美元的交易？在世界各地交朋友？"
+    },
+    "step4": {
+      "title": "您的个性化推荐",
+      "subtitle": "根据您的回答，以下是我们的建议",
+      "bookSession": "您希望我们为您预约第一次课程吗？",
+      "bookOptions": {
+        "yes": "是的，我想要个性化课程",
+        "later": "可能稍后",
+        "no": "不，谢谢"
+      },
+      "successMessage": "🎉 太棒了！我们将在24小时内与您联系，安排您的课程。",
+      "chatOnWhatsApp": "立即在WhatsApp上聊天"
+    },
+    "recommendations": {
+      "premium": {
+        "title": "高端辅导策略通话",
+        "duration": "60分钟",
+        "description": "非常适合希望加速取得成果的专业人士。获得个性化的商务英语自信路线图。"
+      },
+      "group": {
+        "title": "小组分级课程",
+        "duration": "30分钟",
+        "description": "找到最适合您的小组和级别。与志同道合的同伴一起学习。"
+      },
+      "intro": {
+        "title": "免费英语诊断通话",
+        "duration": "20分钟",
+        "description": "无压力，无承诺。让我们评估您的水平，探索您的可能性。"
+      },
+      "standard": {
+        "title": "个性化策略课程",
+        "duration": "45分钟",
+        "description": "通过为您独特情况量身定制的计划，明确您的英语学习之旅。"
+      }
+    }
+  },
+  "calendly": {
+    "title": "45分钟通话",
+    "duration": "45分钟",
+    "conferenceDetails": "确认后将提供网络会议详情。",
+    "description": "这是一次免费的介绍性课程，让我们了解您和您的学习目标",
+    "selectDateTime": "选择日期和时间",
+    "availableTimes": "可用时间",
+    "timezone": "时区：UTC时间",
+    "poweredBy": "技术支持"
+  },
+  "coaching": {
+    "title": "在[辅导]中您将获得什么",
+    "subtitle": "首次免费20分钟辅导通话",
+    "description": "挑战自我，拓宽视野。当您掌握语言时，您会感到信心倍增，以新的、充实的方式建立联系和表达自己。",
+    "highlight": "在线学习英语不仅仅是关于单词",
+    "highlightSecondary": "而是打开通往新的有意义的体验和关系的大门。"
+  },
+  "processSteps": {
+    "step1": {
+      "title": "您需要做什么",
+      "highlight": "通话前",
+      "description": "为了充分利用我们在一起的时间，请考虑记下关于您的语言目标和您想要重点关注的具体领域的几点。",
+      "secondaryText": "准备一个安静的房间让您能够集中注意力，确保良好的网络连接，并准备在Zoom会议期间打开摄像头。"
+    },
+    "step2": {
+      "title": "会发生什么",
+      "highlight": "通话中",
+      "description": "我们将讨论您的语言背景、目标以及您可能面临的任何挑战。这是一个让我们更好地相互了解的绝佳机会。",
+      "secondaryText": "我会请您分享您目前的舒适程度、挑战和期望的结果，这样我们就可以根据您独特的旅程来定制辅导。"
+    },
+    "step3": {
+      "title": "期待什么",
+      "highlight": "通话后",
+      "description": "在决定继续后，我们将顺利过渡到入职流程，为我们的合作奠定基础。",
+      "secondaryText": "这包括签署合同、根据您的目标定制专属辅导计划，并制定方便的时间表，确保您在掌握所需语言技能方面持续进步。"
+    }
+  },
+  "about": {
+    "title": "关于[凯特]",
+    "paragraph1": "我的背景涵盖多种角色，包括英语辅导、翻译、交替传译和同声传译。",
+    "paragraph2": "我在多个领域磨练了我的校对和转录技能——教育、地方政府、健康、文学、商业和环境。",
+    "paragraph3": "值得一提的是，我曾为电话系统和视频提供专业的三语配音服务。",
+    "paragraph4": "通过在欧洲、美国、英国、中东和亚洲的跨文化经验，我为每一次互动带来独特的视角。"
+  },
+  "certifications": {
+    "badge": "专业资质",
+    "title": "文凭与认证",
+    "subtitle": "国际认可的资质，确保语言辅导和教育的最高标准。",
+    "accreditedBy": "认证机构",
+    "certs": {
+      "stirling": {
+        "title": "文学学士（优秀）",
+        "organization": "斯特灵大学",
+        "description": "英语作为外语",
+        "course": "由皇家宪章授权的学术委员会授予的学位",
+        "date": "2007年6月",
+        "accreditation": "英国大学"
+      },
+      "neuro": {
+        "title": "神经语言教练®认证",
+        "organization": "ELC语言教练认证",
+        "description": "来自认证教育和语言教练学院（AELCA）的语言教练证书",
+        "course": "30小时继续教练教育",
+        "date": "2024年11月",
+        "accreditation": "ICF CCE认证"
+      },
+      "tefl": {
+        "title": "TEFL / TESOL证书",
+        "organization": "苏格兰TEFL",
+        "description": "英语作为外语教学（TEFL）和向其他语言使用者教授英语（TESOL）",
+        "course": "30小时语法和语言意识课程",
+        "date": "2010年5月",
+        "accreditation": "ODLQC认证"
+      }
+    }
+  },
+  "testimonials": {
+    "title": "为什么他们推荐凯特",
+    "subtitle": "作为个人语言教练",
+    "description": "学习一门语言，如英语，是一段令人难以置信的旅程，它提供个人和职业成长。",
+    "reviews": {
+      "martin": {
+        "name": "马丁·琼斯",
+        "title": "商人，巴西",
+        "quote": "我非常享受与凯特的语言辅导。她非常擅长理解国际商务的各个方面以及日常工作的运作方式——这对我非常有价值"
+      },
+      "shawn": {
+        "name": "肖恩·帕克",
+        "title": "学生，美国",
+        "quote": "凯特作为老师真的很棒。她让学习变得有趣，帮助我理解那些看起来很难的东西。她真的很关心教学。"
+      },
+      "jessica": {
+        "name": "杰西卡·桑德斯",
+        "title": "家长，英国",
+        "quote": "凯特是我孩子学习英语的优秀老师。她耐心且善良，我的孩子在她的帮助下变得更加自信。我非常喜欢凯特利用孩子的个人兴趣来帮助他们学习。"
+      },
+      "fiona": {
+        "name": "吴菲奥娜",
+        "title": "家长，香港",
+        "quote": "我真的很感激这项辅导服务，因为它不仅提高了凯文的英语水平，还激发了他对学习的热情。我强烈推荐这项服务给其他希望支持孩子掌握英语的家长。"
+      },
+      "mia": {
+        "name": "张美雅",
+        "title": "家长，香港",
+        "quote": "Ocean发现这些课程非常有益。凯特的专业知识和实用见解真正与Ocean的学习风格产生了共鸣。这些课程不仅提高了Ocean的语言技能，还增加了他的实际知识。"
+      },
+      "sharon": {
+        "name": "郑雪伦",
+        "title": "家长，香港",
+        "quote": "凯特为唐娜量身定制的课程恰到好处。一点都不无聊！我完全推荐这项辅导给像我女儿唐娜这样想要提高语言能力，但需要温和推动的孩子。"
+      }
+    }
+  },
+  "powerfulTools": {
+    "title": "这些强大的工具将",
+    "subtitle": "推动您的学习",
+    "description": "我使用多种工具为学生提供引人入胜、有效且个性化的学习体验。",
+    "tools": [
+      "Quill和ChatGPT等平台将创建针对您特定语法和词汇需求的定制练习",
+      "Diffit将帮助您进行阅读段落和理解问题练习",
+      "Wordwall和Miro将创建动态活动，如匹配游戏和数字头脑风暴会议",
+      "以Zoom为主要直播课程平台，您将获得AI总结来衡量您的进度",
+      "BBC Learning English和IXL等资源将提供可靠、高质量的语言内容和练习"
+    ]
+  },
+  "neurocoaching": {
+    "title": "核心神经辅导工具",
+    "subtitle": "提升您的语言技能",
+    "description": "我使用多种工具为学生提供引人入胜、有效且个性化的学习体验。",
+    "tools": {
+      "emotional": {
+        "title": "情感",
+        "highlight": "连接",
+        "description": "情感参与的内容激活大脑的奖励中心，增强学习和记忆。",
+        "detail": "我会鼓励您讨论您热衷的话题，或使用故事讲述使课程更具相关性和影响力"
+      },
+      "active": {
+        "title": "主动",
+        "highlight": "回忆",
+        "description": "主动回忆信息，例如通过测验或自我解释，可以加强记忆路径。",
+        "detail": "我会提示您总结故事或大声解释语法规则，以强化您所学的内容。"
+      },
+      "growth": {
+        "title": "成长",
+        "highlight": "心态",
+        "description": "理解大脑是可适应的，这培养了学生的成长心态，鼓励他们将挑战视为学习过程的一部分。",
+        "detail": "作为教练，我会通过庆祝您的进步来促进这一点，强调您的语言技能会随着练习和坚持而增长。"
+      }
+    }
+  },
+  "finalCta": {
+    "title": "您[准备好]了吗？",
+    "quote": "\"开始的最佳时机是昨天，但下一个最佳时机是今天。\"",
+    "description": "迈出语言自信的第一步，立即报名参加个性化语言辅导。",
+    "secondaryText": "通过量身定制的课程和专家指导，我将引导您在短时间内掌握英语自信。",
+    "bottomTitle": "您还在等什么？",
+    "bottomSubtitle": "现在就自信地说[英语]！"
+  },
+  "footer": {
+    "brandDescription": "专业神经语言辅导，帮助您实现自信的英语沟通。",
+    "studentLogin": "学生登录",
+    "quickLinks": "快速链接",
+    "businessCoaching": "商务辅导",
+    "studentTutoring": "学生辅导",
+    "groupSessions": "小组课程",
+    "aboutKate": "关于凯特",
+    "testimonials": "学员评价",
+    "services": "服务",
+    "oneOnOneCoaching": "一对一辅导",
+    "smallGroupClasses": "小组课程",
+    "ieltsPreparation": "雅思备考",
+    "businessEnglish": "商务英语",
+    "conversationPractice": "口语练习",
+    "getInTouch": "联系我们",
+    "whatsappChat": "WhatsApp聊天",
+    "location": "香港、欧洲和中东",
+    "copyright": "凯特·波德布雷兹斯基。保留所有权利。",
+    "privacyPolicy": "隐私政策",
+    "termsOfService": "服务条款"
+  },
+  "chatWidget": {
+    "greeting": "您好，有问题吗？扫码添加微信联系我。"
+  },
+  "languageSwitcher": {
+    "en": "English",
+    "zh": "中文"
+  }
+}

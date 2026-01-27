@@ -1,8 +1,10 @@
 import React from 'react';
 import { Mail, Phone, MapPin, ExternalLink } from 'lucide-react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const { t } = useLanguage();
 
   return (
     <footer className="bg-[#0f1a24] text-gray-300">
@@ -15,7 +17,7 @@ const Footer = () => {
               English<span className="text-[#E8833A]">Online</span>
             </h3>
             <p className="text-gray-400 text-sm leading-relaxed mb-6">
-              Professional neuro language coaching to help you achieve confident English communication.
+              {t('footer.brandDescription')}
             </p>
             <a
               href="https://study-english.softr.app/sign-in"
@@ -23,38 +25,38 @@ const Footer = () => {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-[#2980b9] hover:bg-[#3498db] text-white font-semibold px-6 py-3 rounded-md transition-colors duration-300"
             >
-              Student Login
+              {t('footer.studentLogin')}
               <ExternalLink className="w-4 h-4" />
             </a>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-white font-semibold mb-4">Quick Links</h4>
+            <h4 className="text-white font-semibold mb-4">{t('footer.quickLinks')}</h4>
             <ul className="space-y-3">
               <li>
                 <a href="#coaching" className="text-gray-400 hover:text-[#4ADE80] transition-colors text-sm">
-                  Business Coaching
+                  {t('footer.businessCoaching')}
                 </a>
               </li>
               <li>
                 <a href="#tutoring" className="text-gray-400 hover:text-[#4ADE80] transition-colors text-sm">
-                  Student Tutoring
+                  {t('footer.studentTutoring')}
                 </a>
               </li>
               <li>
                 <a href="#groups" className="text-gray-400 hover:text-[#4ADE80] transition-colors text-sm">
-                  Group Sessions
+                  {t('footer.groupSessions')}
                 </a>
               </li>
               <li>
                 <a href="#about" className="text-gray-400 hover:text-[#4ADE80] transition-colors text-sm">
-                  About Kate
+                  {t('footer.aboutKate')}
                 </a>
               </li>
               <li>
                 <a href="#testimonials" className="text-gray-400 hover:text-[#4ADE80] transition-colors text-sm">
-                  Testimonials
+                  {t('footer.testimonials')}
                 </a>
               </li>
             </ul>
@@ -62,31 +64,31 @@ const Footer = () => {
 
           {/* Services */}
           <div>
-            <h4 className="text-white font-semibold mb-4">Services</h4>
+            <h4 className="text-white font-semibold mb-4">{t('footer.services')}</h4>
             <ul className="space-y-3">
               <li>
                 <a href="#" className="text-gray-400 hover:text-[#4ADE80] transition-colors text-sm">
-                  1-on-1 Coaching
+                  {t('footer.oneOnOneCoaching')}
                 </a>
               </li>
               <li>
                 <a href="#" className="text-gray-400 hover:text-[#4ADE80] transition-colors text-sm">
-                  Small Group Classes
+                  {t('footer.smallGroupClasses')}
                 </a>
               </li>
               <li>
                 <a href="#" className="text-gray-400 hover:text-[#4ADE80] transition-colors text-sm">
-                  IELTS Preparation
+                  {t('footer.ieltsPreparation')}
                 </a>
               </li>
               <li>
                 <a href="#" className="text-gray-400 hover:text-[#4ADE80] transition-colors text-sm">
-                  Business English
+                  {t('footer.businessEnglish')}
                 </a>
               </li>
               <li>
                 <a href="#" className="text-gray-400 hover:text-[#4ADE80] transition-colors text-sm">
-                  Conversation Practice
+                  {t('footer.conversationPractice')}
                 </a>
               </li>
             </ul>
@@ -94,7 +96,7 @@ const Footer = () => {
 
           {/* Contact */}
           <div>
-            <h4 className="text-white font-semibold mb-4">Get in Touch</h4>
+            <h4 className="text-white font-semibold mb-4">{t('footer.getInTouch')}</h4>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <Mail className="w-5 h-5 text-[#E8833A] mt-0.5 flex-shrink-0" />
@@ -105,13 +107,13 @@ const Footer = () => {
               <li className="flex items-start gap-3">
                 <Phone className="w-5 h-5 text-[#E8833A] mt-0.5 flex-shrink-0" />
                 <a href="https://wa.link/nisn2y" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors text-sm">
-                  WhatsApp Chat
+                  {t('footer.whatsappChat')}
                 </a>
               </li>
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-[#E8833A] mt-0.5 flex-shrink-0" />
                 <span className="text-gray-400 text-sm">
-                  Hong Kong, Europe & Middle East
+                  {t('footer.location')}
                 </span>
               </li>
             </ul>
@@ -124,14 +126,14 @@ const Footer = () => {
         <div className="container mx-auto px-8 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-gray-500 text-sm">
-              © {currentYear} Kate Podbrezsky. All rights reserved.
+              © {currentYear} {t('footer.copyright')}
             </p>
             <div className="flex items-center gap-6">
               <a href="#" className="text-gray-500 hover:text-gray-300 transition-colors text-sm">
-                Privacy Policy
+                {t('footer.privacyPolicy')}
               </a>
               <a href="#" className="text-gray-500 hover:text-gray-300 transition-colors text-sm">
-                Terms of Service
+                {t('footer.termsOfService')}
               </a>
             </div>
           </div>

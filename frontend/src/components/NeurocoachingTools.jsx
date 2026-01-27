@@ -1,8 +1,10 @@
 import React from 'react';
 import { Heart, Brain, TrendingUp } from 'lucide-react';
-import { neurocoachingTools } from '../data/mock';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const NeurocoachingTools = () => {
+  const { t } = useLanguage();
+
   const getIcon = (index) => {
     const icons = [
       <Heart key="heart" className="w-8 h-8" />,
@@ -12,24 +14,47 @@ const NeurocoachingTools = () => {
     return icons[index];
   };
 
+  const tools = [
+    {
+      id: 1,
+      titleKey: 'neurocoaching.tools.emotional.title',
+      highlightKey: 'neurocoaching.tools.emotional.highlight',
+      descriptionKey: 'neurocoaching.tools.emotional.description',
+      detailKey: 'neurocoaching.tools.emotional.detail'
+    },
+    {
+      id: 2,
+      titleKey: 'neurocoaching.tools.active.title',
+      highlightKey: 'neurocoaching.tools.active.highlight',
+      descriptionKey: 'neurocoaching.tools.active.description',
+      detailKey: 'neurocoaching.tools.active.detail'
+    },
+    {
+      id: 3,
+      titleKey: 'neurocoaching.tools.growth.title',
+      highlightKey: 'neurocoaching.tools.growth.highlight',
+      descriptionKey: 'neurocoaching.tools.growth.description',
+      detailKey: 'neurocoaching.tools.growth.detail'
+    }
+  ];
+
   return (
     <section className="bg-gray-50 py-20 px-8">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-serif text-gray-800 mb-4">
-            <span className="font-bold">Essential Neurocoaching Tools</span>
+            <span className="font-bold">{t('neurocoaching.title')}</span>
           </h2>
           <h3 className="text-xl md:text-2xl text-gray-700">
-            To Enhance Your Language Skill
+            {t('neurocoaching.subtitle')}
           </h3>
           <p className="text-gray-500 mt-4">
-            I utilize a diverse range of tools to deliver engaging, effective,<br />
-            and personalized learning experiences for my students.
+            {t('neurocoaching.description')}
           </p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8">
-          {neurocoachingTools.map((tool, index) => (
+          {tools.map((tool, index) => (
             <div
               key={tool.id}
               className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow"
@@ -41,17 +66,17 @@ const NeurocoachingTools = () => {
               
               {/* Title */}
               <h3 className="text-lg font-semibold text-gray-800 mb-2">
-                {tool.title}{' '}
-                <span className="text-[#E8833A] font-bold">{tool.highlight}</span>
+                {t(tool.titleKey)}{' '}
+                <span className="text-[#E8833A] font-bold">{t(tool.highlightKey)}</span>
               </h3>
               
               {/* Description */}
               <p className="text-gray-600 text-sm mb-4 leading-relaxed">
-                {tool.description}
+                {t(tool.descriptionKey)}
               </p>
               
               <p className="text-gray-500 text-sm leading-relaxed italic">
-                {tool.detail}
+                {t(tool.detailKey)}
               </p>
             </div>
           ))}

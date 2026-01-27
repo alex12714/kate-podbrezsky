@@ -1,6 +1,8 @@
 import React from "react";
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { LanguageProvider } from "./contexts/LanguageContext";
+import LanguageSwitcher from "./components/LanguageSwitcher";
 import HeroSection from "./components/HeroSection";
 import CoachIntro from "./components/CoachIntro";
 import CalendlySection from "./components/CalendlySection";
@@ -19,6 +21,7 @@ import Footer from "./components/Footer";
 const Home = () => {
   return (
     <div className="min-h-screen">
+      <LanguageSwitcher />
       <HeroSection />
       <IntakeForm />
       <CoachIntro />
@@ -39,13 +42,15 @@ const Home = () => {
 
 function App() {
   return (
-    <div className="App">
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />} />
-        </Routes>
-      </BrowserRouter>
-    </div>
+    <LanguageProvider>
+      <div className="App">
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Home />} />
+          </Routes>
+        </BrowserRouter>
+      </div>
+    </LanguageProvider>
   );
 }
 

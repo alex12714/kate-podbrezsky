@@ -1,13 +1,20 @@
 import React, { useState } from 'react';
 import { ChevronLeft, ChevronRight, Globe } from 'lucide-react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const CalendlySection = () => {
   const [selectedDate, setSelectedDate] = useState(null);
   const [currentMonth, setCurrentMonth] = useState(new Date(2025, 11, 1)); // December 2025
+  const { t, language } = useLanguage();
+  const kateImage = "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/0G4MpFhMscifkcXgKcOa/media/6748ef4d48436375b44b0f4e.png";
 
-  const monthNames = ["January", "February", "March", "April", "May", "June",
-    "July", "August", "September", "October", "November", "December"
-  ];
+  const monthNames = language === 'zh' 
+    ? ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"]
+    : ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+  const dayNames = language === 'zh'
+    ? ['日', '一', '二', '三', '四', '五', '六']
+    : ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
 
   const getDaysInMonth = (date) => {
     const year = date.getFullYear();
@@ -69,7 +76,7 @@ const CalendlySection = () => {
             <div className="lg:w-1/3 p-6 border-b lg:border-b-0 lg:border-r border-gray-200">
               <div className="flex items-center gap-3 mb-4">
                 <img
-                  src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/0G4MpFhMscifkcXgKcOa/media/6748ef4d48436375b44b0f4e.png"
+                  src={kateImage}
                   alt="Kate Podbrezsky"
                   className="w-12 h-12 rounded-full object-cover"
                 />
@@ -78,30 +85,30 @@ const CalendlySection = () => {
                 </div>
               </div>
               
-              <h3 className="text-xl font-bold text-gray-800 mb-2">45 Minute Call</h3>
+              <h3 className="text-xl font-bold text-gray-800 mb-2">{t('calendly.title')}</h3>
               
               <div className="flex items-center gap-2 text-gray-500 mb-4">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
-                <span>45 min</span>
+                <span>{t('calendly.duration')}</span>
               </div>
               
               <div className="flex items-center gap-2 text-gray-500 mb-4">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
                 </svg>
-                <span className="text-sm">Web conferencing details provided upon confirmation.</span>
+                <span className="text-sm">{t('calendly.conferenceDetails')}</span>
               </div>
               
               <p className="text-gray-600 text-sm">
-                This is a free introductory session to get to know about you and your learning goals
+                {t('calendly.description')}
               </p>
             </div>
             
             {/* Right Panel - Calendar */}
             <div className="lg:w-2/3 p-6">
-              <h4 className="text-lg font-semibold text-gray-800 mb-4">Select a Date & Time</h4>
+              <h4 className="text-lg font-semibold text-gray-800 mb-4">{t('calendly.selectDateTime')}</h4>
               
               {/* Calendar Header */}
               <div className="flex items-center justify-between mb-4">
@@ -124,7 +131,7 @@ const CalendlySection = () => {
               
               {/* Calendar Grid */}
               <div className="grid grid-cols-7 gap-1 mb-4">
-                {['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'].map(day => (
+                {dayNames.map(day => (
                   <div key={day} className="text-center text-xs font-medium text-gray-500 py-2">
                     {day}
                   </div>
@@ -151,7 +158,7 @@ const CalendlySection = () => {
               {selectedDate && (
                 <div className="border-t border-gray-200 pt-4">
                   <h5 className="text-sm font-medium text-gray-700 mb-3">
-                    Available times for {monthNames[currentMonth.getMonth()]} {selectedDate}
+                    {t('calendly.availableTimes')} {monthNames[currentMonth.getMonth()]} {selectedDate}
                   </h5>
                   <div className="grid grid-cols-2 gap-2">
                     {timeSlots.map(time => (
@@ -169,7 +176,7 @@ const CalendlySection = () => {
               {/* Timezone */}
               <div className="flex items-center gap-2 mt-4 text-gray-500 text-sm">
                 <Globe className="w-4 h-4" />
-                <span>Time zone: UTC Time</span>
+                <span>{t('calendly.timezone')}</span>
               </div>
             </div>
           </div>
@@ -182,7 +189,7 @@ const CalendlySection = () => {
               rel="noopener noreferrer"
               className="text-xs text-gray-500 hover:text-gray-700"
             >
-              powered by <span className="font-semibold">Calendly</span>
+              {t('calendly.poweredBy')} <span className="font-semibold">Calendly</span>
             </a>
           </div>
         </div>

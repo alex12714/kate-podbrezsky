@@ -1,31 +1,34 @@
 import React from 'react';
 import { ClipboardList, MessageCircle, CheckCircle } from 'lucide-react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const ProcessSteps = () => {
+  const { t } = useLanguage();
+
   const steps = [
     {
       id: 1,
       icon: <ClipboardList className="w-8 h-8" />,
-      title: "What You'll Do",
-      highlight: "Before the Call",
-      description: "To make the most of our time together, consider jotting down a few points about your language goals and any specific areas you'd like to focus on.",
-      secondaryText: "Prepare quiet room where you can concentrate, have a good internet connection and prepare to turn on your camera during the Zoom session."
+      title: t('processSteps.step1.title'),
+      highlight: t('processSteps.step1.highlight'),
+      description: t('processSteps.step1.description'),
+      secondaryText: t('processSteps.step1.secondaryText')
     },
     {
       id: 2,
       icon: <MessageCircle className="w-8 h-8" />,
-      title: "What Happens",
-      highlight: "During the Call",
-      description: "We'll discuss your language background, goals, and any challenges you might be facing. This is a fantastic opportunity for us to get to know each other better.",
-      secondaryText: "I will ask you to share your current comfort level, challenges, and desired outcomes, so we can tailor the coaching to your unique journey."
+      title: t('processSteps.step2.title'),
+      highlight: t('processSteps.step2.highlight'),
+      description: t('processSteps.step2.description'),
+      secondaryText: t('processSteps.step2.secondaryText')
     },
     {
       id: 3,
       icon: <CheckCircle className="w-8 h-8" />,
-      title: "What to Expect",
-      highlight: "After the Call",
-      description: "Upon deciding to proceed, we'll smoothly transition into the onboarding process, where we'll set the foundation for our collaboration.",
-      secondaryText: "This includes signing the contract, tailoring a bespoke coaching plan to your goals, and crafting a convenient schedule that ensures consistent progress toward mastering your desired language skills."
+      title: t('processSteps.step3.title'),
+      highlight: t('processSteps.step3.highlight'),
+      description: t('processSteps.step3.description'),
+      secondaryText: t('processSteps.step3.secondaryText')
     }
   ];
 
