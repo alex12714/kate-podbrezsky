@@ -17,6 +17,7 @@ import FinalCTA from "./components/FinalCTA";
 import ChatWidget from "./components/ChatWidget";
 import IntakeForm from "./components/IntakeForm";
 import Footer from "./components/Footer";
+import StudentPortal from "./components/StudentPortal";
 
 const Home = () => {
   return (
@@ -47,6 +48,7 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/students/:studentId" element={<StudentPortal />} />
           </Routes>
         </BrowserRouter>
       </div>
