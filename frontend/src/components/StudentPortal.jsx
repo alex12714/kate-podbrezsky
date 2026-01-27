@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from "react";
+import React, { useState, useEffect, useMemo, useRef } from "react";
 import { useParams } from "react-router-dom";
 
 const AIRTABLE_TOKEN = process.env.REACT_APP_AIRTABLE_TOKEN;
@@ -146,41 +146,49 @@ const FormattedContent = ({ text }) => {
   );
 };
 
+// Contract Page Component (Full Page)
+const ContractPage = ({ contractHtml, studentName, onClose }) => {
+  return (
+    <div className="fixed inset-0 bg-white z-50 overflow-auto">
+      <header className="sticky top-0 bg-white shadow-sm border-b z-10">
+        <div className="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <button
+              onClick={onClose}
+              className="p-2 hover:bg-gray-100 rounded-full transition-colors"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+            <div>
+              <h1 className="text-xl font-bold text-gray-800">Student Contract</h1>
+              <p className="text-sm text-gray-500">{studentName}</p>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main className="max-w-4xl mx-auto px-4 py-8">
+        <div
+          className="prose prose-sm max-w-none bg-white"
+          dangerouslySetInnerHTML={{ __html: contractHtml }}
+        />
+      </main>
+    </div>
+  );
+};
+
 // Student Profile Modal
-const StudentProfileModal = ({ student, onClose }) => {
-  const [showContract, setShowContract] = useState(false);
+const StudentProfileModal = ({ student, onClose, onViewContract }) => {
   const fields = student?.fields || {};
 
   const name = fields["Name"] || "Student";
   const totalLessons = fields["Total Lessons By Student"] || 0;
   const contractHtml = fields["Student Contract HTML"] || "";
-  const email = fields["Email"] || "";
   const phone = fields["Phone"] || "";
   const startDate = fields["Start date"] || "";
   const level = fields["Student Level"] || "";
-
-  if (showContract && contractHtml) {
-    return (
-      <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
-        <div className="bg-white rounded-2xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden flex flex-col">
-          <div className="bg-gradient-to-r from-orange-400 to-amber-500 px-6 py-4 flex items-center justify-between">
-            <h2 className="text-xl font-bold text-white">📄 Student Contract</h2>
-            <button onClick={() => setShowContract(false)} className="text-white/80 hover:text-white">
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
-          </div>
-          <div className="flex-1 overflow-y-auto p-6">
-            <div
-              className="prose prose-sm max-w-none"
-              dangerouslySetInnerHTML={{ __html: contractHtml }}
-            />
-          </div>
-        </div>
-      </div>
-    );
-  }
 
   return (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
@@ -221,11 +229,14 @@ const StudentProfileModal = ({ student, onClose }) => {
 
           {contractHtml && (
             <button
-              onClick={() => setShowContract(true)}
-              className="w-full flex items-center justify-center gap-2 p-3 bg-blue-50 hover:bg-blue-100 rounded-xl text-blue-700 font-medium transition-colors"
+              onClick={onViewContract}
+              className="w-full flex items-center justify-center gap-2 p-4 bg-blue-50 hover:bg-blue-100 rounded-xl text-blue-700 font-medium transition-colors"
             >
-              <span>📄</span>
-              <span>View Contract</span>
+              <span className="text-xl">📄</span>
+              <span>View Student Contract</span>
+              <svg className="w-5 h-5 ml-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
             </button>
           )}
         </div>
@@ -334,7 +345,7 @@ const Calendar = ({ lessons, selectedDate, onSelectDate }) => {
 };
 
 // Lesson Detail Panel
-const LessonDetailPanel = ({ lesson, isUpcoming, onClose }) => {
+const LessonDetailPanel = React.forwardRef(({ lesson, isUpcoming, onClose }, ref) => {
   if (!lesson) return null;
 
   const fields = lesson.fields || {};
@@ -349,7 +360,7 @@ const LessonDetailPanel = ({ lesson, isUpcoming, onClose }) => {
   const lessonTitle = fields["Lesson"] || "";
 
   return (
-    <div className="bg-white rounded-2xl shadow-lg overflow-hidden h-full flex flex-col">
+    <div ref={ref} className="bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col">
       <div className={`px-6 py-4 flex items-center justify-between ${
         isUpcoming
           ? 'bg-gradient-to-r from-blue-500 to-indigo-600'
@@ -462,7 +473,7 @@ const LessonDetailPanel = ({ lesson, isUpcoming, onClose }) => {
       </div>
     </div>
   );
-};
+});
 
 // Upcoming Lesson Card
 const UpcomingLessonCard = ({ lesson, isSelected, onClick }) => {
@@ -508,6 +519,9 @@ const StudentPortal = () => {
   const [selectedDate, setSelectedDate] = useState(null);
   const [selectedUpcoming, setSelectedUpcoming] = useState(false);
   const [showProfile, setShowProfile] = useState(false);
+  const [showContract, setShowContract] = useState(false);
+
+  const detailPanelRef = useRef(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -570,7 +584,6 @@ const StudentPortal = () => {
       return lessonDate > now;
     });
 
-    // Sort by date ascending and get the closest one
     futureScheduled.sort((a, b) => {
       const dateA = new Date(a.fields?.["Date and Time"]);
       const dateB = new Date(b.fields?.["Date and Time"]);
@@ -602,19 +615,34 @@ const StudentPortal = () => {
     });
   }, [selectedDate, completedLessons]);
 
+  const scrollToDetail = () => {
+    setTimeout(() => {
+      if (detailPanelRef.current) {
+        detailPanelRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }, 100);
+  };
+
   const handleSelectUpcoming = () => {
     setSelectedUpcoming(true);
     setSelectedDate(null);
+    scrollToDetail();
   };
 
   const handleSelectDate = (date) => {
     setSelectedDate(date);
     setSelectedUpcoming(false);
+    scrollToDetail();
   };
 
   const handleCloseDetail = () => {
     setSelectedDate(null);
     setSelectedUpcoming(false);
+  };
+
+  const handleViewContract = () => {
+    setShowProfile(false);
+    setShowContract(true);
   };
 
   if (loading) {
@@ -641,6 +669,7 @@ const StudentPortal = () => {
   }
 
   const studentName = student?.fields?.["Student First Name Formula"] || student?.fields?.Name || "Student";
+  const contractHtml = student?.fields?.["Student Contract HTML"] || "";
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-orange-50 to-amber-50">
@@ -706,18 +735,20 @@ const StudentPortal = () => {
             <div className={`transition-all duration-300 ${(selectedDate || selectedUpcoming) ? 'opacity-100' : 'opacity-50'}`}>
               {selectedUpcoming && nextUpcomingLesson ? (
                 <LessonDetailPanel
+                  ref={detailPanelRef}
                   lesson={nextUpcomingLesson}
                   isUpcoming={true}
                   onClose={handleCloseDetail}
                 />
               ) : selectedLessons && selectedLessons.length > 0 ? (
                 <LessonDetailPanel
+                  ref={detailPanelRef}
                   lesson={selectedLessons[0]}
                   isUpcoming={false}
                   onClose={handleCloseDetail}
                 />
               ) : (
-                <div className="bg-white rounded-2xl shadow-lg p-8 h-full flex items-center justify-center text-center min-h-[400px]">
+                <div ref={detailPanelRef} className="bg-white rounded-2xl shadow-lg p-8 flex items-center justify-center text-center min-h-[400px]">
                   <div>
                     <div className="text-5xl mb-4">📅</div>
                     <h3 className="text-lg font-semibold text-gray-800 mb-2">Select a Lesson</h3>
@@ -742,6 +773,16 @@ const StudentPortal = () => {
         <StudentProfileModal
           student={student}
           onClose={() => setShowProfile(false)}
+          onViewContract={handleViewContract}
+        />
+      )}
+
+      {/* Contract Page */}
+      {showContract && contractHtml && (
+        <ContractPage
+          contractHtml={contractHtml}
+          studentName={studentName}
+          onClose={() => setShowContract(false)}
         />
       )}
     </div>
